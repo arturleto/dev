@@ -1,0 +1,693 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Артур Лето. Сайты и Telegram-боты под ключ</title>
+<meta name="description" content="Сайты, Telegram-боты и автоматизация любой сложности. Цены и сроки открыто, оплата по этапам, код и доступы остаются у вас.">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Артур Лето. Сайты и Telegram-боты под ключ">
+<meta property="og:description" content="18 проектов работают на моём сервере каждый день. Цены, сроки, условия и хостинг простыми словами.">
+<meta property="og:image" content="img/og.jpg">
+<meta name="theme-color" content="#eeecea">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wdth,wght@25..151,100..1000&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #eeecea;
+  --surface: #e4e1dd;
+  --ink: #333231;
+  --muted: #6b6763;
+  --accent: #5c6b54;
+  --accent-strong: #4b5944;
+  --accent-ink: #ffffff;
+  --field-1: #cdc3b6;
+  --field-1-ink: #333231;
+  --dark: #333231;
+  --dark-ink: #eeecea;
+  --dark-soft: #b9b3ac;
+
+  --font: "Roboto Flex", "Arial Narrow", Arial, sans-serif;
+
+  --step-small: clamp(0.8125rem, 0.79rem + 0.1vw, 0.875rem);
+  --step-body: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
+  --step-lead: clamp(1.25rem, 1.1rem + 0.7vw, 1.625rem);
+  --step-title: clamp(1.75rem, 1rem + 2.4vw, 3.25rem);
+  --step-head: clamp(2.5rem, 1.2rem + 4.2vw, 5rem);
+  --step-display: clamp(2.75rem, -0.5rem + 12.2vw, 11rem);
+
+  --margin: clamp(1rem, 2.2vw, 2rem);
+  --gutter: clamp(1rem, 2vw, 2rem);
+  --section: clamp(7.5rem, 12vw, 13rem);
+  --radius: 0px;
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-soft: cubic-bezier(0.33, 1, 0.68, 1);
+  --t-press: 140ms;
+  --t-hover: 180ms;
+  --t-ui: 240ms;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font); font-size: var(--step-body); line-height: 1.5; font-variation-settings: "wdth" 100; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, p, figure, ul, ol, dl, dd, table { margin: 0; }
+ul[class], ol[class] { padding: 0; list-style: none; }
+img { display: block; max-width: 100%; height: auto; }
+button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+a { color: inherit; }
+:target { scroll-margin-top: 2rem; }
+::selection { background: var(--accent); color: var(--accent-ink); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.plain { display: grid; gap: 1rem; padding: 0; list-style: none; max-width: 60ch; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+.display { font-weight: 800; font-variation-settings: "wdth" 30; text-transform: uppercase; letter-spacing: -0.01em; line-height: 0.86; }
+.wrap { padding-inline: var(--margin); }
+
+.button { display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 1.6em; background: var(--accent); color: var(--accent-ink); font-weight: 500; text-decoration: none; border-radius: var(--radius); transition: transform var(--t-press) var(--ease-out), background-color var(--t-hover) ease; }
+.button:active { transform: scale(0.97); }
+.link { text-decoration: underline; text-decoration-color: transparent; text-underline-offset: 0.22em; text-decoration-thickness: 0.07em; transition: text-decoration-color var(--t-hover) ease, color var(--t-hover) ease; }
+@media (hover: hover) and (pointer: fine) {
+  .button:hover { background-color: var(--accent-strong); }
+  .link:hover { text-decoration-color: currentColor; }
+}
+
+/* ---------- hero: card over a dim room ---------- */
+.hero { position: relative; min-height: 100svh; display: grid; place-items: center; padding: var(--margin); overflow: hidden; background: #1d1c1b; }
+.hero__bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) brightness(0.62) contrast(1.05); }
+.hero__card { position: relative; width: min(100%, 60rem); min-height: 62svh; background: var(--field-1); color: var(--field-1-ink); padding: 32px; display: flex; flex-direction: column; gap: clamp(1.5rem, 3vw, 2.5rem); }
+.hero__title { display: flex; justify-content: space-between; gap: 1rem; font-size: var(--step-title); }
+.hero__title span:nth-child(2) { text-align: center; }
+.hero__facts { font-size: var(--step-lead); font-weight: 700; line-height: 1.1; }
+.hero__lead { max-width: 34ch; font-size: var(--step-lead); line-height: 1.35; }
+.hero__foot { margin-top: auto; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 1rem; }
+.hero__credit { font-weight: 500; max-width: 16rem; line-height: 1.35; }
+.hero__more { justify-self: end; font-weight: 500; }
+
+/* ---------- work: names passing a held square ---------- */
+.work { padding-block: var(--section); position: relative; overflow: clip; --frame: min(480px, 33vw); }
+.work__stage { position: sticky; top: calc(50svh - var(--frame) / 2); height: var(--frame); margin-bottom: calc(var(--frame) * -1); z-index: 0; display: grid; grid-template-columns: 1fr var(--frame) 1fr; align-items: center; }
+.work__frame { position: relative; width: var(--frame); height: var(--frame); grid-column: 2; background: var(--surface); overflow: hidden; }
+.work__frame img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center; opacity: 0; transition: opacity 200ms ease; }
+.work__frame img.is-on { opacity: 1; }
+.work__frame::after { content: ""; position: absolute; inset: 0; background: rgba(238, 236, 234, 0.14); }
+.work__fact { line-height: 1.35; max-width: 15rem; }
+.work__fact--l { grid-column: 1; justify-self: end; text-align: right; margin-right: 48px; }
+.work__fact--r { grid-column: 3; justify-self: start; margin-left: 48px; }
+.work__list { position: relative; z-index: 1; text-align: center; }
+.work__list h2 { font-size: var(--step-display); color: var(--muted); }
+.work__name { display: block; font-size: var(--step-display); text-decoration: none; padding-block: 0.06em; transition: color var(--t-hover) ease; }
+.js .work__name { color: rgba(51, 50, 49, 0.2); }
+.js .work__name[aria-current="true"] { color: var(--ink); }
+@media (hover: hover) and (pointer: fine) { .js .work__name:hover { color: var(--ink); } }
+
+/* ---------- schedule: line-up at one type size ---------- */
+.day { background: var(--dark); color: var(--dark-ink); padding-block: var(--section); }
+.day__head { display: grid; grid-template-columns: repeat(12, 1fr); gap: var(--gutter); margin-bottom: clamp(3rem, 6vw, 5rem); }
+.day__head h2 { grid-column: 1 / span 6; font-size: var(--step-head); }
+.day__live { grid-column: 8 / span 5; align-self: end; font-size: var(--step-lead); line-height: 1.35; }
+.day__live strong { font-weight: 500; color: var(--field-1); }
+.sched { width: 100%; border-collapse: collapse; font-size: var(--step-lead); font-weight: 400; }
+.sched th, .sched td { text-align: left; padding: 0; line-height: 1.5; font-weight: 400; vertical-align: top; }
+.sched td:nth-child(1) { width: 40%; padding-right: 1em; }
+.sched td:nth-child(2) { width: 26%; padding-right: 1em; }
+.sched td:nth-child(3) { width: 22%; padding-right: 1em; color: var(--dark-soft); }
+.sched td:nth-child(4) { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.sched .part th { position: sticky; top: 0; background: var(--dark); color: var(--field-1); padding: 72px 0 20px; z-index: 1; }
+.sched tbody:first-of-type .part th { padding-top: 0; }
+.sched tr.is-next td { color: var(--field-1); }
+.sched tr.is-next td:first-child::before { content: ""; display: inline-block; width: 0.3em; height: 0.3em; border-radius: 50%; background: var(--field-1); margin-right: 0.4em; vertical-align: 0.2em; }
+
+/* ---------- pricing: plan names, one live figure ---------- */
+.price { padding-block: var(--section); }
+.price__grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: var(--gutter); align-items: start; }
+.price__names { grid-column: 1 / span 6; }
+.price__names h2 { font-size: var(--step-lead); font-weight: 500; margin-bottom: 1.5rem; }
+.plan { display: flex; align-items: center; gap: 0.25em; width: 100%; text-align: left; font-size: var(--step-head); line-height: 1.04; color: var(--muted); transition: color var(--t-hover) ease; }
+.plan::before { content: ""; width: 0.24em; height: 0.24em; border-radius: 50%; background: currentColor; opacity: 0; flex: none; transition: opacity var(--t-hover) ease; }
+.plan[aria-selected="true"] { color: var(--ink); }
+.plan[aria-selected="true"]::before { opacity: 1; }
+@media (hover: hover) and (pointer: fine) { .plan:hover { color: var(--ink); } }
+.plan__inline { display: none; }
+.price__stage { grid-column: 8 / span 5; position: sticky; top: 12vh; transition: opacity 200ms ease; }
+.price__stage.is-swapping { opacity: 0; }
+.price__fig { font-size: var(--step-head); white-space: nowrap; }
+.price__term { margin-top: 1rem; font-weight: 500; }
+.price__text { margin-top: 1.25rem; max-width: 40ch; }
+.price__stage .button { margin-top: 2rem; }
+.price__note { margin-top: clamp(3rem, 6vw, 5rem); max-width: 60ch; font-size: var(--step-lead); line-height: 1.35; }
+
+/* ---------- how: one verb at a time ---------- */
+.how__panel { position: relative; height: 100svh; overflow: hidden; background: #1d1c1b; color: var(--dark-ink); }
+.how__panel img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) brightness(0.5) contrast(1.05); }
+.how__verb { position: absolute; inset: 0; display: grid; place-items: center; font-size: var(--step-display); text-align: center; padding-inline: var(--margin); }
+.how__say { position: absolute; left: 0; bottom: 0; max-width: 38rem; padding: 2rem var(--margin) var(--margin); line-height: 1.45; background: rgba(20, 20, 20, 0.55); }
+
+/* ---------- hosting: pinned heading, passing rows ---------- */
+.host { background: var(--field-1); color: var(--field-1-ink); padding-block: var(--section); }
+.host__grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: var(--gutter); align-items: start; }
+.host__title { grid-column: 1 / span 5; position: sticky; top: 32px; }
+.host__title h2 { font-size: var(--step-head); }
+.host__title p { margin-top: 1.5rem; max-width: 30ch; }
+.host__blocks { grid-column: 7 / span 6; display: grid; gap: 120px; }
+.host__block h3 { font-size: var(--step-lead); font-weight: 700; line-height: 1.2; margin-bottom: 1.25rem; }
+.host__row { display: grid; grid-template-columns: 200px 1fr; gap: var(--gutter); align-items: start; }
+.host__block:nth-child(even) .host__row { grid-template-columns: 1fr 200px; }
+.host__block:nth-child(even) .host__row img { order: 2; }
+.host__row img { width: 200px; aspect-ratio: 3 / 4; object-fit: cover; object-position: top; background: var(--surface); }
+.host__row ul { display: grid; gap: 14px; line-height: 1.4; }
+
+/* ---------- faq: question index, one answer ---------- */
+.faq { padding-block: var(--section); }
+.faq__grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: var(--gutter); align-items: start; }
+.faq__list { grid-column: 1 / span 5; display: grid; gap: 18px; }
+.faq__list h2 { font-size: var(--step-body); font-weight: 400; color: var(--muted); }
+.q { display: flex; gap: 0.75em; align-items: baseline; text-align: left; line-height: 1.35; color: var(--muted); transition: color var(--t-hover) ease; }
+.q::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--muted); flex: none; transform: translateY(-2px); transition: background-color var(--t-hover) ease; }
+.q[aria-selected="true"] { color: var(--ink); }
+.q[aria-selected="true"]::before { background: var(--accent); }
+@media (hover: hover) and (pointer: fine) { .q:hover { color: var(--ink); } }
+.q__inline { display: none; }
+.faq__pane { grid-column: 7 / span 6; position: sticky; top: 120px; font-size: var(--step-lead); line-height: 1.3; max-width: 30ch; transition: opacity 150ms ease; }
+.faq__pane.is-swapping { opacity: 0; }
+
+/* ---------- contact: visit card on a photograph ---------- */
+.contact { position: relative; height: 100svh; min-height: 640px; overflow: hidden; background: #2a2a28; }
+.contact > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 30% 22%; }
+.card { position: absolute; top: 60px; right: 60px; width: 380px; background: var(--bg); padding: 32px; border-radius: 8px; display: grid; gap: 1.25rem; }
+.card h2 { font-size: var(--step-lead); font-weight: 300; line-height: 1.15; font-variation-settings: "wdth" 100; }
+.card__who { line-height: 1.45; }
+.card dl { display: grid; gap: 0.35rem; }
+.card dl div { display: flex; justify-content: space-between; gap: 1rem; }
+.card dd { font-variant-numeric: tabular-nums; text-align: right; }
+.card .button { width: 100%; min-height: 52px; margin-top: 0.5rem; border-radius: 0; }
+
+/* ---------- footer: photograph half, menu half ---------- */
+.foot { display: grid; grid-template-columns: repeat(12, 1fr); min-height: 100svh; background: var(--surface); }
+.foot__pic { grid-column: 1 / span 6; position: relative; overflow: hidden; background: #1d1c1b; }
+.foot__pic video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 55% 40%; filter: grayscale(1) contrast(1.05); }
+.foot__side { grid-column: 8 / span 5; padding: 80px var(--margin) var(--margin) 0; display: flex; flex-direction: column; }
+.foot__mark { font-weight: 600; }
+.foot__menu { margin-top: 2rem; display: grid; gap: 28px; }
+.foot__menu a { font-size: var(--step-title); font-weight: 800; font-variation-settings: "wdth" 30; text-transform: uppercase; line-height: 0.9; text-decoration: none; display: inline-block; transition: transform var(--t-ui) var(--ease-out), color var(--t-hover) ease; }
+@media (hover: hover) and (pointer: fine) {
+  .foot__menu:hover a { color: var(--muted); }
+  .foot__menu a:hover { color: var(--ink); transform: translateX(12px); }
+}
+.foot__info { margin-top: 64px; display: grid; grid-template-columns: 1fr 1fr; gap: var(--gutter); font-size: var(--step-small); }
+.foot__info p + p { margin-top: 0.25rem; }
+.foot__legal { margin-top: auto; padding-top: 3rem; font-size: var(--step-small); color: var(--muted); line-height: 1.45; }
+
+/* ---------- motion ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .js [data-reveal] { opacity: 0; transform: translateY(24px); transition: opacity 700ms var(--ease-out), transform 900ms var(--ease-out); transition-delay: var(--d, 0ms); }
+  .js [data-reveal].is-in { opacity: 1; transform: none; }
+  .js .hero__card { opacity: 0; transform: translateY(32px); animation: rise 1000ms var(--ease-expo) 150ms forwards; }
+  .js .hero__card > * { opacity: 0; animation: fade 700ms var(--ease-out) forwards; }
+  .js .hero__card > :nth-child(1) { animation-delay: 450ms; }
+  .js .hero__card > :nth-child(2) { animation-delay: 540ms; }
+  .js .hero__card > :nth-child(3) { animation-delay: 630ms; }
+  .js .hero__card > :nth-child(4) { animation-delay: 720ms; }
+  .hero__bg { animation: drift 24s var(--ease-soft) infinite alternate; }
+  .how__panel img { transform: scale(1.08); transition: transform 1600ms var(--ease-soft); }
+  .how__panel.is-in img { transform: scale(1); }
+  @keyframes rise { to { opacity: 1; transform: none; } }
+  @keyframes fade { to { opacity: 1; } }
+  @keyframes drift { from { transform: scale(1); } to { transform: scale(1.07) translateX(-1.5%); } }
+}
+
+/* ---------- tablet ---------- */
+@media (max-width: 1000px) {
+  .work { --frame: 46vw; }
+  .work__stage { top: calc(50svh - var(--frame) / 2 - 2rem); height: calc(var(--frame) + 4rem); margin-bottom: calc((var(--frame) + 4rem) * -1); grid-template-columns: 1fr 1fr; grid-template-rows: var(--frame) auto; align-items: start; justify-items: center; column-gap: 1rem; width: min(100%, calc(var(--frame) + 12rem)); margin-inline: auto; }
+  .work__frame { grid-column: 1 / -1; grid-row: 1; }
+  .work__fact { font-size: var(--step-small); max-width: none; margin: 0.75rem 0 0; }
+  .work__fact--l { grid-column: 1; grid-row: 2; justify-self: start; text-align: left; }
+  .work__fact--r { grid-column: 2; grid-row: 2; justify-self: end; text-align: right; }
+  .day__head h2 { grid-column: 1 / -1; }
+  .day__live { grid-column: 1 / -1; }
+  .price__names { grid-column: 1 / span 7; }
+  .price__stage { grid-column: 8 / -1; }
+  .host__title { grid-column: 1 / -1; position: static; margin-bottom: 4rem; }
+  .host__blocks { grid-column: 1 / -1; }
+  .faq__list { grid-column: 1 / span 6; }
+  .faq__pane { grid-column: 7 / -1; }
+}
+
+/* ---------- phone ---------- */
+@media (max-width: 700px) {
+  .hero { padding: 16px; }
+  .hero__card { min-height: 62svh; padding: 24px 20px; }
+  .hero__title { display: block; }
+  .hero__title span:nth-child(2) { text-align: left; }
+  .hero__foot { grid-template-columns: 1fr; justify-items: start; }
+  .hero__foot .button { width: 100%; order: 3; }
+  .hero__more { justify-self: start; }
+
+  .work { --frame: 64vw; }
+  .work__name { padding-block: 0.32em; }
+  .work__stage { width: 100%; }
+
+  .day__head { display: block; }
+  .day__live { margin-top: 1.5rem; }
+  .sched, .sched tbody, .sched tr, .sched td, .sched th { display: block; width: auto !important; }
+  .sched thead { display: none; }
+  .sched tr:not(.part) { display: grid; grid-template-columns: 1fr auto; gap: 0 1rem; margin-bottom: 18px; }
+  .sched tr:not(.part) td:nth-child(1) { grid-column: 1 / -1; line-height: 1.3; padding: 0; }
+  .sched tr:not(.part) td:nth-child(2) { grid-column: 1; font-size: var(--step-small); color: var(--dark-soft); }
+  .sched tr:not(.part) td:nth-child(3) { display: none; }
+  .sched tr:not(.part) td:nth-child(4) { grid-column: 2; grid-row: 2; font-size: var(--step-small); color: var(--dark-soft); }
+  .sched tr.is-next td:nth-child(n) { color: var(--field-1); }
+  .sched .part th { padding: 48px 0 16px; }
+
+  .price__grid { display: block; }
+  .price__stage { display: none; }
+  .plan__inline { padding: 0.75rem 0 5rem; }
+  .plan[aria-selected="true"] + .plan__inline { display: block; }
+  .plan__inline .button { width: 100%; margin-top: 1.5rem; }
+
+  .how__say { max-width: none; right: 0; padding: 1.25rem 16px 2rem; }
+
+  .host__row, .host__block:nth-child(even) .host__row { grid-template-columns: 1fr; }
+  .host__block:nth-child(even) .host__row img { order: 0; }
+  .host__row img { width: 100%; aspect-ratio: 4 / 3; }
+  .host__blocks { gap: 72px; }
+
+  .faq__grid { display: block; }
+  .faq__pane { display: none; }
+  .faq__list { gap: 14px; }
+  .q[aria-selected="true"] + .q__inline { display: block; padding: 0.25rem 0 0.75rem calc(8px + 0.75em); line-height: 1.4; }
+
+  .contact { height: auto; min-height: 0; background: var(--bg); padding-bottom: 16px; }
+  .contact > img { position: relative; height: 70svh; }
+  .card { position: relative; top: auto; right: auto; width: auto; margin: -80px 16px 0; }
+  .card .button { min-height: 56px; }
+
+  .foot { display: block; min-height: 0; }
+  .foot__pic { height: 50svh; }
+  .foot__side { padding: 48px 16px 24px; }
+  .foot__menu { gap: 20px; }
+  .foot__info { grid-template-columns: 1fr; gap: 1rem; margin-top: 48px; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero" id="top">
+  <img class="hero__bg" src="img/found/telegraph-operators-in-tokyo-central-telegraph-office.jpg" width="1165" height="802" alt="Операторы центрального телеграфа в Токио, 1963 год">
+  <div class="hero__card">
+    <h1 class="hero__title display"><span>Сайты</span> <span>и Telegram-боты</span> <span>под ключ</span></h1>
+    <p class="hero__facts display">Артур Лето, разработчик<br>От лендинга до сложного сервиса<br>Работаю удалённо с Бали</p>
+    <p class="hero__lead">Делаю сайты и ботов, которые приводят клиентов и работают без вас. Мой парсер находил одному клиенту 680 заявок за неделю.</p>
+    <div class="hero__foot">
+      <p class="hero__credit">18 проектов работают на моём сервере каждый день</p>
+      <a class="button" href="https://t.me/arturleto">Обсудить проект</a>
+      <a class="hero__more link" href="#raboty">Смотреть работы</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="work wrap" id="raboty" aria-labelledby="work-h">
+  <div class="work__stage" aria-hidden="true">
+    <p class="work__fact work__fact--l" id="work-kind">Сайт сообщества</p>
+    <div class="work__frame" id="work-frame">
+      <img class="is-on" src="img/work/vz_comm_sq.jpg" width="780" height="780" alt="">
+      <img src="img/work/vz_diag_sq.jpg" width="780" height="780" alt="" loading="lazy">
+      <img src="img/work/vz_blog_sq.jpg" width="780" height="780" alt="" loading="lazy">
+      <img src="img/work/finansist_sq.jpg" width="900" height="900" alt="" loading="lazy">
+      <img src="img/work/sovetnik_sq.jpg" width="900" height="900" alt="" loading="lazy">
+      <img src="img/work/parslead_sq.jpg" width="900" height="900" alt="" loading="lazy">
+      <img src="img/work/radar_sq.jpg" width="900" height="900" alt="" loading="lazy">
+      <img src="img/work/publikator_sq.jpg" width="900" height="900" alt="" loading="lazy">
+      <img src="img/work/ms_invest_sq.jpg" width="780" height="780" alt="" loading="lazy">
+      <img src="img/work/cmteam_sq.jpg" width="900" height="900" alt="" loading="lazy">
+      <img src="img/work/kit_sq.jpg" width="780" height="780" alt="" loading="lazy">
+    </div>
+    <p class="work__fact work__fact--r" id="work-detail">Свой домен, оплата, аналитика</p>
+  </div>
+  <ol class="work__list">
+    <li><h2 class="display" id="work-h">Работы</h2></li>
+    <li><a class="work__name display" data-i="0" data-kind="Сайт сообщества" data-detail="Свой домен, оплата, аналитика" href="https://svezhiy-vzdoh.ru/community-svezhiy-vzdoh/" target="_blank" rel="noopener">Свежий Вздох</a></li>
+    <li><a class="work__name display" data-i="1" data-kind="Тест из 21 вопроса" data-detail="Ведёт на продающую страницу и оплату" href="https://arturleto.github.io/svezhy-vzdoh/" target="_blank" rel="noopener">Диагностика</a></li>
+    <li><a class="work__name display" data-i="2" data-kind="Блог для Яндекса" data-detail="Статьи, которые приводят людей из поиска" href="https://svezhiy-vzdoh.ru/blog/" target="_blank" rel="noopener">Блог</a></li>
+    <li><a class="work__name display" data-i="3" data-kind="Бот учёта расходов" data-detail="Записывает с голоса и по фото чека" href="#sutki">Финансист</a></li>
+    <li><a class="work__name display" data-i="4" data-kind="Бот с гороскопом на день" data-detail="Расчёт по дате рождения, текст пишет ИИ" href="#sutki">Советник</a></li>
+    <li><a class="work__name display" data-i="5" data-kind="Поиск клиентов в чатах" data-detail="Платят 5 компаний, работает с 2022 года" href="#sutki">Parslead</a></li>
+    <li><a class="work__name display" data-i="6" data-kind="Сводка новостей с ИИ" data-detail="Каналы, чат и форум, раз в 4 часа" href="#sutki">Радар</a></li>
+    <li><a class="work__name display" data-i="7" data-kind="Публикация видео в Instagram" data-detail="Сначала утверждение в Telegram" href="#sutki">Публикатор</a></li>
+    <li><a class="work__name display" data-i="8" data-kind="Страница для инвесторов магазина" data-detail="Три языка и своя аналитика" href="https://arturleto.github.io/maison/invest/" target="_blank" rel="noopener">Maison</a></li>
+    <li><a class="work__name display" data-i="9" data-kind="Бот для команды партнёров" data-detail="Вступление в 8 шагов на трёх языках" href="#sutki">CM Team</a></li>
+    <li><a class="work__name display" data-i="10" data-kind="Сайт продукта" data-detail="Комплект настроек для ИИ-помощника" href="https://arturleto.github.io/claude-kit/" target="_blank" rel="noopener">Claude Kit</a></li>
+  </ol>
+</section>
+
+<section class="day wrap" id="sutki" aria-labelledby="day-h">
+  <div class="day__head">
+    <h2 class="display" id="day-h" data-reveal>Сутки моих ботов</h2>
+    <p class="day__live" id="day-live" data-reveal style="--d:90ms">Это настоящее расписание моих ботов. Ваш бот так же будет работать сам, по часам. Время указано по Бали.</p>
+  </div>
+  <table class="sched" id="sched">
+    <thead class="sr"><tr><th>Что делает</th><th>Кто</th><th>Где</th><th>Когда, по Бали</th></tr></thead>
+    <tbody>
+      <tr class="part"><th colspan="4">Утро</th></tr>
+      <tr data-t="04:00"><td>Обновляет вход в Instagram</td><td>Публикатор</td><td>Сервер в Германии</td><td>04:00</td></tr>
+      <tr data-t="07:00"><td>Присылает прогноз на день</td><td>Советник</td><td>Telegram</td><td>07:00</td></tr>
+      <tr data-t="09:00"><td>Публикует утверждённый рилс</td><td>Публикатор</td><td>Instagram</td><td>09:00</td></tr>
+      <tr data-t="10:00"><td>Проверяет, что поиск заявок работает</td><td>Контроль</td><td>Два сервера</td><td>10:00</td></tr>
+    </tbody>
+    <tbody>
+      <tr class="part"><th colspan="4">День</th></tr>
+      <tr data-t="11:00"><td>Сохраняет копию базы финансов</td><td>Финансист</td><td>GitHub и Telegram</td><td>11:00</td></tr>
+      <tr data-t="18:00"><td>Ещё раз проверяет поиск заявок</td><td>Контроль</td><td>Два сервера</td><td>18:00</td></tr>
+    </tbody>
+    <tbody>
+      <tr class="part"><th colspan="4">Вечер</th></tr>
+      <tr data-t="19:00"><td>Публикует второй рилс</td><td>Публикатор</td><td>Instagram</td><td>19:00</td></tr>
+      <tr data-t="19:40"><td>Собирает итоги рабочего дня</td><td>Мой день</td><td>Ноутбук и сервер</td><td>19:40</td></tr>
+      <tr data-t="20:00"><td>Присылает уведомление с итогом дня</td><td>Мой день</td><td>Телефон</td><td>20:00</td></tr>
+      <tr data-t="21:00"><td>Пишет итог дня магазина</td><td>Maison</td><td>Рабочий чат</td><td>21:00</td></tr>
+      <tr data-t="21:00"><td>Спрашивает о планах на завтра</td><td>Советник</td><td>Telegram</td><td>21:00</td></tr>
+    </tbody>
+    <tbody>
+      <tr class="part"><th colspan="4">Круглосуточно</th></tr>
+      <tr><td>Ищет заявки в 366 чатах</td><td>Parslead</td><td>Сервер парсера</td><td>Всегда</td></tr>
+      <tr><td>Перезапускает поиск, если он завис</td><td>Сторож</td><td>Сервер парсера</td><td>Каждые 15 минут</td></tr>
+      <tr><td>Сохраняет переписку и голосовые</td><td>Maison</td><td>GitHub</td><td>Каждую минуту</td></tr>
+      <tr><td>Собирает сводку новостей</td><td>Радар</td><td>Сервер в Германии</td><td>Каждые 4 часа</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="price wrap" id="ceny" aria-labelledby="price-h">
+  <div class="price__grid">
+    <div class="price__names" role="tablist" aria-labelledby="price-h">
+      <h2 id="price-h" data-reveal>Цены и сроки</h2>
+      <noscript><ul class="plain"><li><strong>Лендинг</strong>. от 40 000 ₽, 7-12 рабочих дней. Одна страница, которая продаёт одну услугу. Дизайн под ваш бренд, текст по структуре продаж, заявки в Telegram или CRM, Яндекс Метрика, которая считает заявки.</li><li><strong>Сайт компании</strong>. от 80 000 ₽, 15-25 рабочих дней. От 5 до 15 страниц. Услуги, кейсы, цены, контакты и формы заявок. Тексты можно править самим, без программиста.</li><li><strong>Блог</strong>. от 60 000 ₽, 10-20 рабочих дней. Блог со статьями, которые находят в Яндексе. Рубрики, поиск по сайту, быстрые страницы и настройка под поисковики.</li><li><strong>Магазин</strong>. от 120 000 ₽, 20-35 рабочих дней. Каталог, корзина, оплата картой и по СБП, заказы приходят вам в Telegram, у покупателя есть личный кабинет.</li><li><strong>Веб-сервис</strong>. от 150 000 ₽, 30-60 рабочих дней. Личный кабинет, база данных, панель управления, разные права для сотрудников и связка с другими сервисами. Для идей сложнее сайта.</li><li><strong>Telegram-бот</strong>. от 30 000 ₽, 5-10 рабочих дней. Меню, кнопки, приём заявок, ответы на частые вопросы и рассылки. Заявки сразу приходят вам в Telegram.</li><li><strong>Бот с оплатой</strong>. от 70 000 ₽, 12-25 рабочих дней. Оплата и подписки, доступ в закрытый канал, напоминания о продлении, панель управления со статистикой.</li><li><strong>Бот с ИИ</strong>. от 60 000 ₽, 10-25 рабочих дней. Понимает голосовые, читает фото и чеки, отвечает клиентам по вашим материалам. Подключаю ChatGPT, Claude или Gemini.</li><li><strong>Приложение в Telegram</strong>. от 100 000 ₽, 15-30 рабочих дней. Приложение внутри Telegram. Каталог, запись, личный кабинет и оплата. Клиенту не нужно ничего скачивать.</li><li><strong>Парсер</strong>. от 25 000 ₽, 5-10 рабочих дней. Следит за чатами, каналами и сайтами по ключевым словам. Находит людей, которым нужна ваша услуга, и присылает их вам. Нейросеть отсеивает мусор.</li><li><strong>Автоматизация</strong>. от 20 000 ₽, 3-10 рабочих дней. Связываю сервисы между собой. CRM, Google Таблицы, рассылки, автопубликация в соцсети. Цена за подключение одного сервиса к другому.</li><li><strong>Поддержка</strong>. от 10 000 ₽, в месяц. Слежу, чтобы всё работало, обновляю, делаю копии базы и вношу мелкие правки. Новые функции сверх этого стоят 2 500 ₽ в час.</li></ul></noscript>
+    </div>
+    <div class="price__stage" id="price-stage" aria-live="polite">
+      <p class="price__fig display" id="pf">от 30 000 ₽</p>
+      <p class="price__term" id="pt">5-10 рабочих дней</p>
+      <p class="price__text" id="px">Меню, кнопки, приём заявок, ответы на частые вопросы и рассылки. Заявки сразу приходят вам в Telegram.</p>
+      <a class="button" id="pb" href="https://t.me/arturleto">Обсудить бота</a>
+    </div>
+  </div>
+  <p class="price__note" data-reveal>Это минимальные цены. Точную сумму назову после разговора и закреплю в договоре вместе со сроком. Срок считаю с того дня, как вы утвердили задание.</p>
+</section>
+
+<section class="how" id="kak" aria-label="Как я работаю">
+  <article class="how__panel">
+    <img src="img/found/female-indian-telephone-switchboard-operator-helen-of.jpg" width="1920" height="1372" alt="Телефонистка гостиницы Many Glacier за коммутатором, 1925 год" loading="lazy">
+    <h2 class="how__verb display">Обсудим</h2>
+    <p class="how__say" data-reveal>Разберём задачу в Telegram или на созвоне. Я составлю короткое задание, а цену и срок закреплю в договоре.</p>
+  </article>
+  <article class="how__panel">
+    <img src="img/found/african-american-woman-teletype-operator.jpg" width="1920" height="2300" alt="Оператор телетайпа за работой, 1940-е" loading="lazy">
+    <h2 class="how__verb display">Соберу</h2>
+    <p class="how__say" data-reveal>Работаю этапами и до запуска показываю результат по закрытой ссылке. На каждом этапе есть два круга правок.</p>
+  </article>
+  <article class="how__panel">
+    <img src="img/found/wisconsin-bell-telephone-company-switchboard.jpg" width="1920" height="1118" alt="Мужчина за телефонным коммутатором компании Wisconsin Bell, 1930 год" loading="lazy">
+    <h2 class="how__verb display">Запущу</h2>
+    <p class="how__say" data-reveal>Ставлю проект на хостинг, подключаю домен, оплату и аналитику. Домен, сервер и бот регистрирую на ваше имя.</p>
+  </article>
+  <article class="how__panel">
+    <img src="img/found/telegraph-operators-in-tokyo-central-telegraph-office.jpg" width="1165" height="802" alt="Зал центрального телеграфа в Токио, 1963 год" loading="lazy">
+    <h2 class="how__verb display">Поддержу</h2>
+    <p class="how__say" data-reveal>60 дней бесплатно исправляю ошибки. Передаю код, доступы и понятную инструкцию.</p>
+  </article>
+</section>
+
+<section class="host wrap" id="hosting" aria-labelledby="host-h">
+  <div class="host__grid">
+    <div class="host__title">
+      <h2 class="display" id="host-h">Где будет жить проект</h2>
+      <p>Сайту и боту нужен свой дом в интернете. Объясняю, какой нужен вам и сколько он стоит в месяц.</p>
+    </div>
+    <div class="host__blocks">
+      <article class="host__block">
+        <h3>Лендинг и сайт</h3>
+        <div class="host__row">
+          <img src="img/work/vz_comm_34.jpg" width="780" height="1040" alt="Сайт сообщества Свежий Вздох на телефоне" loading="lazy">
+          <ul>
+            <li>Обычный хостинг, например Beget</li>
+            <li>От 420 ₽ в месяц при оплате за год</li>
+            <li>Замочек https в адресной строке бесплатно</li>
+            <li>Подходит для лендинга и сайта-визитки</li>
+          </ul>
+        </div>
+      </article>
+      <article class="host__block">
+        <h3>Блог, магазин, сервис</h3>
+        <div class="host__row">
+          <img src="img/work/vz_blog_34.jpg" width="780" height="1040" alt="Блог Свежего Вздоха на телефоне" loading="lazy">
+          <ul>
+            <li>Хостинг с базой данных или свой сервер</li>
+            <li>Хостинг для WordPress от 590 ₽ в месяц</li>
+            <li>Свой сервер от 350 ₽ в месяц</li>
+            <li>Блог Свежего Вздоха работает на своём сервере</li>
+          </ul>
+        </div>
+      </article>
+      <article class="host__block">
+        <h3>Telegram-бот</h3>
+        <div class="host__row">
+          <img src="img/work/finansist_34.jpg" width="810" height="1080" alt="Бот-финансист записывает расход по голосовому сообщению" loading="lazy">
+          <ul>
+            <li>Бот работает круглосуточно, ему нужен сервер</li>
+            <li>Сервер в России от 330 ₽ в месяц</li>
+            <li>Простой бот может работать бесплатно в Яндекс Облаке</li>
+            <li>Один недорогой сервер держит больше десяти ботов</li>
+          </ul>
+        </div>
+      </article>
+      <article class="host__block">
+        <h3>Бот с нейросетью</h3>
+        <div class="host__row">
+          <img src="img/work/sovetnik_34.jpg" width="810" height="1080" alt="Советник по звёздам присылает утренний прогноз" loading="lazy">
+          <ul>
+            <li>ChatGPT и Claude не отвечают российским серверам</li>
+            <li>Поэтому такой бот живёт на сервере в Европе</li>
+            <li>Сервер в Нидерландах от 1 620 ₽ в месяц</li>
+            <li>Ответ нейросети стоит от 1 ₽, а базу клиентов можно держать в России</li>
+          </ul>
+        </div>
+      </article>
+      <article class="host__block">
+        <h3>Данные и копии</h3>
+        <div class="host__row">
+          <img src="img/work/parslead_34.jpg" width="810" height="1080" alt="Отчёт бота о проверке парсеров" loading="lazy">
+          <ul>
+            <li>База и файлы лежат на том же сервере</li>
+            <li>Каждый день копия базы уходит в отдельное место</li>
+            <li>Данные клиентов из России храню на сервере в России, этого требует закон 152-ФЗ</li>
+            <li>Копия лежит отдельно от сервера и не пропадёт вместе с ним</li>
+          </ul>
+        </div>
+      </article>
+      <article class="host__block">
+        <h3>Домен</h3>
+        <div class="host__row">
+          <img src="img/work/ms_invest_34.jpg" width="780" height="1040" alt="Страница для инвесторов на трёх языках" loading="lazy">
+          <ul>
+            <li>Домен .ru от 199 ₽ за регистрацию</li>
+            <li>Продление от 420 ₽ в год</li>
+            <li>При покупке нужно подтвердить личность через Госуслуги, подскажу как</li>
+            <li>Домен оформляю на вас</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="faq wrap" id="voprosy" aria-labelledby="faq-h">
+  <div class="faq__grid">
+    <div class="faq__list" role="tablist" aria-labelledby="faq-h">
+      <h2 id="faq-h">Частые вопросы</h2>
+      <noscript><dl class="plain"><dt><strong>Как вы считаете цену?</strong></dt><dd>Цена зависит от числа страниц или экранов, функций и подключений к другим сервисам. После разговора назову точную сумму и закреплю её в договоре. Если задача не меняется, цена тоже не меняется.</dd><dt><strong>Как проходит оплата?</strong></dt><dd>Проект до 100 000 ₽ оплачивается двумя частями. Половина до старта, половина после запуска. Крупный проект оплачивается в три этапа. 30% до старта, 40% после сдачи основной части, 30% после запуска.</dd><dt><strong>Что если результат не понравится?</strong></dt><dd>Вы видите работу на каждом этапе, поэтому в конце сюрпризов нет. На каждом этапе есть два круга правок. Если решите остановиться, оплачиваете только сделанное, а остаток предоплаты я возвращаю.</dd><dt><strong>Кому принадлежит код?</strong></dt><dd>Вам. Домен, сервер и бот сразу оформлены на вас. После полной оплаты передаю код, доступы и инструкцию, а права на код прописываем в договоре.</dd><dt><strong>Сколько стоит содержать проект?</strong></dt><dd>Хостинг сайта стоит от 420 ₽ в месяц, сервер для бота от 330 ₽. Нейросеть оплачивается по факту, один ответ стоит от 1 ₽. Всё это я посчитаю заранее.</dd><dt><strong>Что будет после запуска?</strong></dt><dd>Ещё 60 дней я бесплатно исправляю ошибки. Дальше можно взять поддержку от 10 000 ₽ в месяц или обращаться разово, когда нужно.</dd><dt><strong>Вы работаете с клиентами из России?</strong></dt><dd>Да. Я живу на Бали и работаю удалённо. На Бали на 5 часов позже, чем в Москве, поэтому к вашему утру часть работы уже готова. Код и доступы всегда у вас, так что проект ни от кого не зависит.</dd><dt><strong>Можно сделать срочно?</strong></dt><dd>Да, если позволяет график. Срочная работа стоит на 30% дороже.</dd><dt><strong>Что не входит в цену?</strong></dt><dd>Тексты и фото, если их нужно делать с нуля, а ещё оплата хостинга, домена и нейросети. Всё это обсуждаем заранее и пишем отдельной строкой.</dd></dl></noscript>
+    </div>
+    <p class="faq__pane" id="faq-pane" aria-live="polite"></p>
+  </div>
+</section>
+
+<section class="contact" id="kontakty" aria-labelledby="contact-h">
+  <img src="img/work/artur.jpg" width="960" height="1280" alt="Артур Лето на Бали с попугаем ара на плече" loading="lazy">
+  <div class="card" data-reveal>
+    <h2 id="contact-h">Напишите мне</h2>
+    <p class="card__who">Артур Лето<br>Живу на Бали, работаю удалённо</p>
+    <dl>
+      <div><dt>Telegram</dt><dd><a class="link" href="https://t.me/arturleto">@arturleto</a></dd></div>
+      <div><dt>Instagram</dt><dd><a class="link" href="https://instagram.com/artur_leto_">@artur_leto_</a></dd></div>
+      <div><dt>На Бали сейчас</dt><dd id="bali-now">UTC+8</dd></div>
+      <div><dt>Разница с Москвой</dt><dd>+5 часов</dd></div>
+    </dl>
+    <a class="button" href="https://t.me/arturleto">Написать в Telegram</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="foot__pic"><video id="tp" muted loop playsinline preload="none" poster="img/found/teleprinter-automatic-printing-poster.jpg" width="854" height="480" aria-label="Телетайп Lorenz сам печатает сообщение, 1960-е"><source src="img/found/teleprinter-automatic-printing.webm" type="video/webm"><source src="img/found/teleprinter.mp4" type="video/mp4"></video></div>
+  <div class="foot__side">
+    <p class="foot__mark">Артур Лето</p>
+    <nav class="foot__menu" aria-label="Разделы">
+      <a href="#raboty">Работы</a>
+      <a href="#sutki">Сутки ботов</a>
+      <a href="#ceny">Цены</a>
+      <a href="#kak">Как работаю</a>
+      <a href="#hosting">Хостинг</a>
+      <a href="#voprosy">Вопросы</a>
+    </nav>
+    <div class="foot__info">
+      <div><p>Связь</p><p><a class="link" href="https://t.me/arturleto">Telegram @arturleto</a></p></div>
+      <div><p>Соцсети</p><p><a class="link" href="https://instagram.com/artur_leto_">Instagram @artur_leto_</a></p></div>
+    </div>
+    <p class="foot__legal">© 2026 Артур Лето. Архивные фото из Wikimedia Commons. Телеграф Токио, NTT, 1963. Телефонистка гостиницы Many Glacier, Bain News Service, 1925. Оператор телетайпа, 1940-е. Все три в общественном достоянии. Коммутатор Wisconsin Bell, Gary Langebartels / FortepanIowa, CC BY-SA 4.0. Видео телетайпа Lorenz, Konrad Gutkowski, CC BY 3.0.</p>
+  </div>
+</footer>
+
+<script>
+document.documentElement.classList.add('js');
+(function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* reveals */
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } });
+  }, { rootMargin: '0px 0px -6% 0px', threshold: 0 });
+  document.querySelectorAll('[data-reveal], .how__panel').forEach(function (el) { io.observe(el); });
+
+  /* footer clip: plays only on screen */
+  var tp = document.getElementById('tp');
+  if (tp && !reduce) {
+    new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { tp.play().catch(function () {}); } else { tp.pause(); } });
+    }, { threshold: 0.2 }).observe(tp);
+  }
+
+  /* work: the name crossing the middle sets the picture */
+  var names = [].slice.call(document.querySelectorAll('.work__name'));
+  var imgs = [].slice.call(document.querySelectorAll('#work-frame img'));
+  var kind = document.getElementById('work-kind'), detail = document.getElementById('work-detail');
+  function setWork(a) {
+    var i = +a.dataset.i;
+    names.forEach(function (n) { n.setAttribute('aria-current', n === a ? 'true' : 'false'); });
+    imgs.forEach(function (im, k) { im.classList.toggle('is-on', k === i); if (k === i && im.loading === 'lazy') im.loading = 'eager'; });
+    kind.textContent = a.dataset.kind;
+    detail.textContent = a.dataset.detail;
+  }
+  var mid = new IntersectionObserver(function (es) {
+    es.forEach(function (e) { if (e.isIntersecting) setWork(e.target); });
+  }, { rootMargin: '-49% 0px -49% 0px', threshold: 0 });
+  names.forEach(function (n) { mid.observe(n); });
+  imgs.forEach(function (im) { var pre = new Image(); pre.src = im.src; });
+
+  /* schedule: what runs next, by Bali time */
+  function baliNow() { var d = new Date(); return new Date(d.getTime() + (d.getTimezoneOffset() + 480) * 60000); }
+  function hhmm(d) { return String(d.getHours()).padStart(2, '0') + ':' + String(d.getMinutes()).padStart(2, '0'); }
+  var rows = [].slice.call(document.querySelectorAll('#sched tr[data-t]'));
+  function tick() {
+    var now = baliNow(), mins = now.getHours() * 60 + now.getMinutes();
+    var next = null;
+    rows.forEach(function (r) { r.classList.remove('is-next'); });
+    for (var k = 0; k < rows.length; k++) {
+      var p = rows[k].dataset.t.split(':'), m = +p[0] * 60 + +p[1];
+      if (m > mins) { next = rows[k]; break; }
+    }
+    if (!next) next = rows[0];
+    var t = next.dataset.t;
+    rows.forEach(function (r) { if (r.dataset.t === t) r.classList.add('is-next'); });
+    var what = next.cells[0].textContent, who = next.cells[1].textContent;
+    what = what.charAt(0).toLowerCase() + what.slice(1);
+    document.getElementById('day-live').innerHTML = 'Сейчас на Бали <strong>' + hhmm(now) + '</strong>. Следующая задача в ' + t + '. ' + who + ' ' + what + '.';
+    document.getElementById('bali-now').textContent = hhmm(now);
+  }
+  tick(); setInterval(tick, 30000);
+
+  /* pricing */
+  var plans = [
+    ['Лендинг', 'от 40 000 ₽', '7-12 рабочих дней', 'Одна страница, которая продаёт одну услугу. Дизайн под ваш бренд, текст по структуре продаж, заявки в Telegram или CRM, Яндекс Метрика, которая считает заявки.', 'Обсудить лендинг'],
+    ['Сайт компании', 'от 80 000 ₽', '15-25 рабочих дней', 'От 5 до 15 страниц. Услуги, кейсы, цены, контакты и формы заявок. Тексты можно править самим, без программиста.', 'Обсудить сайт'],
+    ['Блог', 'от 60 000 ₽', '10-20 рабочих дней', 'Блог со статьями, которые находят в Яндексе. Рубрики, поиск по сайту, быстрые страницы и настройка под поисковики.', 'Обсудить блог'],
+    ['Магазин', 'от 120 000 ₽', '20-35 рабочих дней', 'Каталог, корзина, оплата картой и по СБП, заказы приходят вам в Telegram, у покупателя есть личный кабинет.', 'Обсудить магазин'],
+    ['Веб-сервис', 'от 150 000 ₽', '30-60 рабочих дней', 'Личный кабинет, база данных, панель управления, разные права для сотрудников и связка с другими сервисами. Для идей сложнее сайта.', 'Обсудить сервис'],
+    ['Telegram-бот', 'от 30 000 ₽', '5-10 рабочих дней', 'Меню, кнопки, приём заявок, ответы на частые вопросы и рассылки. Заявки сразу приходят вам в Telegram.', 'Обсудить бота'],
+    ['Бот с оплатой', 'от 70 000 ₽', '12-25 рабочих дней', 'Оплата и подписки, доступ в закрытый канал, напоминания о продлении, панель управления со статистикой.', 'Обсудить бота с оплатой'],
+    ['Бот с ИИ', 'от 60 000 ₽', '10-25 рабочих дней', 'Понимает голосовые, читает фото и чеки, отвечает клиентам по вашим материалам. Подключаю ChatGPT, Claude или Gemini.', 'Обсудить бота с ИИ'],
+    ['Приложение в Telegram', 'от 100 000 ₽', '15-30 рабочих дней', 'Приложение внутри Telegram. Каталог, запись, личный кабинет и оплата. Клиенту не нужно ничего скачивать.', 'Обсудить мини-приложение'],
+    ['Парсер', 'от 25 000 ₽', '5-10 рабочих дней', 'Следит за чатами, каналами и сайтами по ключевым словам. Находит людей, которым нужна ваша услуга, и присылает их вам. Нейросеть отсеивает мусор.', 'Обсудить парсер'],
+    ['Автоматизация', 'от 20 000 ₽', '3-10 рабочих дней', 'Связываю сервисы между собой. CRM, Google Таблицы, рассылки, автопубликация в соцсети. Цена за подключение одного сервиса к другому.', 'Обсудить автоматизацию'],
+    ['Поддержка', 'от 10 000 ₽', 'в месяц', 'Слежу, чтобы всё работало, обновляю, делаю копии базы и вношу мелкие правки. Новые функции сверх этого стоят 2 500 ₽ в час.', 'Обсудить поддержку']
+  ];
+  var tg = 'https://t.me/arturleto';
+  var list = document.querySelector('.price__names');
+  var stage = document.getElementById('price-stage');
+  var pf = document.getElementById('pf'), pt = document.getElementById('pt'), px = document.getElementById('px'), pb = document.getElementById('pb');
+  var planBtns = plans.map(function (p, i) {
+    var b = document.createElement('button');
+    b.className = 'plan display'; b.type = 'button'; b.setAttribute('role', 'tab'); b.textContent = p[0];
+    b.id = 'plan-' + i;
+    var inl = document.createElement('div');
+    inl.className = 'plan__inline';
+    inl.innerHTML = '<p class="price__fig display">' + p[1] + '</p><p class="price__term">' + p[2] + '</p><p class="price__text">' + p[3] + '</p><a class="button" href="' + tg + '">' + p[4] + '</a>';
+    list.appendChild(b); list.appendChild(inl);
+    b.addEventListener('click', function () { selectPlan(i); });
+    b.addEventListener('focus', function () { selectPlan(i); });
+    return b;
+  });
+  var cur = -1;
+  function selectPlan(i) {
+    if (i === cur) return;
+    cur = i;
+    planBtns.forEach(function (b, k) { b.setAttribute('aria-selected', k === i ? 'true' : 'false'); });
+    var p = plans[i];
+    function fill() { pf.textContent = p[1]; pt.textContent = p[2]; px.textContent = p[3]; pb.textContent = p[4]; }
+    if (reduce) { fill(); return; }
+    stage.classList.add('is-swapping');
+    setTimeout(function () { fill(); stage.classList.remove('is-swapping'); }, 200);
+  }
+  selectPlan(5);
+
+  /* faq */
+  var faqs = [
+    ['Как вы считаете цену?', 'Цена зависит от числа страниц или экранов, функций и подключений к другим сервисам. После разговора назову точную сумму и закреплю её в договоре. Если задача не меняется, цена тоже не меняется.'],
+    ['Как проходит оплата?', 'Проект до 100 000 ₽ оплачивается двумя частями. Половина до старта, половина после запуска. Крупный проект оплачивается в три этапа. 30% до старта, 40% после сдачи основной части, 30% после запуска.'],
+    ['Что если результат не понравится?', 'Вы видите работу на каждом этапе, поэтому в конце сюрпризов нет. На каждом этапе есть два круга правок. Если решите остановиться, оплачиваете только сделанное, а остаток предоплаты я возвращаю.'],
+    ['Кому принадлежит код?', 'Вам. Домен, сервер и бот сразу оформлены на вас. После полной оплаты передаю код, доступы и инструкцию, а права на код прописываем в договоре.'],
+    ['Сколько стоит содержать проект?', 'Хостинг сайта стоит от 420 ₽ в месяц, сервер для бота от 330 ₽. Нейросеть оплачивается по факту, один ответ стоит от 1 ₽. Всё это я посчитаю заранее.'],
+    ['Что будет после запуска?', 'Ещё 60 дней я бесплатно исправляю ошибки. Дальше можно взять поддержку от 10 000 ₽ в месяц или обращаться разово, когда нужно.'],
+    ['Вы работаете с клиентами из России?', 'Да. Я живу на Бали и работаю удалённо. На Бали на 5 часов позже, чем в Москве, поэтому к вашему утру часть работы уже готова. Код и доступы всегда у вас, так что проект ни от кого не зависит.'],
+    ['Можно сделать срочно?', 'Да, если позволяет график. Срочная работа стоит на 30% дороже.'],
+    ['Что не входит в цену?', 'Тексты и фото, если их нужно делать с нуля, а ещё оплата хостинга, домена и нейросети. Всё это обсуждаем заранее и пишем отдельной строкой.']
+  ];
+  var flist = document.querySelector('.faq__list'), pane = document.getElementById('faq-pane');
+  var qBtns = faqs.map(function (f, i) {
+    var b = document.createElement('button');
+    b.className = 'q'; b.type = 'button'; b.setAttribute('role', 'tab'); b.textContent = f[0];
+    var inl = document.createElement('p'); inl.className = 'q__inline'; inl.textContent = f[1];
+    flist.appendChild(b); flist.appendChild(inl);
+    b.addEventListener('click', function () { selectQ(i); });
+    b.addEventListener('focus', function () { selectQ(i); });
+    if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) b.addEventListener('mouseenter', function () { selectQ(i); });
+    return b;
+  });
+  var qc = -1;
+  function selectQ(i) {
+    if (i === qc) return;
+    qc = i;
+    qBtns.forEach(function (b, k) { b.setAttribute('aria-selected', k === i ? 'true' : 'false'); });
+    if (reduce) { pane.textContent = faqs[i][1]; return; }
+    pane.classList.add('is-swapping');
+    setTimeout(function () { pane.textContent = faqs[i][1]; pane.classList.remove('is-swapping'); }, 150);
+  }
+  selectQ(0);
+})();
+</script>
+</body>
+</html>
