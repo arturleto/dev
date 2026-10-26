@@ -93,7 +93,8 @@ a { color: inherit; }
 .work__frame { position: relative; width: var(--frame); height: var(--frame); grid-column: 2; background: var(--surface); overflow: hidden; }
 .work__frame img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center; opacity: 0; transition: opacity 200ms ease; }
 .work__frame img.is-on { opacity: 1; }
-.work__frame::after { content: ""; position: absolute; inset: 0; background: rgba(238, 236, 234, 0.14); }
+.work__frame::after { content: ""; position: absolute; inset: 0; background: rgba(238, 236, 234, 0.14); transition: background-color 200ms ease; }
+.work__frame.is-dark::after { background: rgba(238, 236, 234, 0.6); }
 .work__fact { line-height: 1.35; max-width: 15rem; }
 .work__fact--l { grid-column: 1; justify-self: end; text-align: right; margin-right: 48px; }
 .work__fact--r { grid-column: 3; justify-self: start; margin-left: 48px; }
@@ -319,16 +320,16 @@ a { color: inherit; }
     <p class="work__fact work__fact--l" id="work-kind">Сайт сообщества</p>
     <div class="work__frame" id="work-frame">
       <img class="is-on" src="img/work/vz_comm_sq.jpg" width="780" height="780" alt="">
-      <img src="img/work/vz_diag_sq.jpg" width="780" height="780" alt="" loading="lazy">
+      <img src="img/work/vz_diag_sq.jpg" width="780" height="780" alt="" data-dark loading="lazy">
       <img src="img/work/vz_blog_sq.jpg" width="780" height="780" alt="" loading="lazy">
       <img src="img/work/finansist_sq.jpg" width="900" height="900" alt="" loading="lazy">
       <img src="img/work/sovetnik_sq.jpg" width="900" height="900" alt="" loading="lazy">
       <img src="img/work/parslead_sq.jpg" width="900" height="900" alt="" loading="lazy">
       <img src="img/work/radar_sq.jpg" width="900" height="900" alt="" loading="lazy">
       <img src="img/work/publikator_sq.jpg" width="900" height="900" alt="" loading="lazy">
-      <img src="img/work/ms_invest_sq.jpg" width="780" height="780" alt="" loading="lazy">
+      <img src="img/work/ms_invest_sq.jpg" width="780" height="780" alt="" data-dark loading="lazy">
       <img src="img/work/cmteam_sq.jpg" width="900" height="900" alt="" loading="lazy">
-      <img src="img/work/kit_sq.jpg" width="780" height="780" alt="" loading="lazy">
+      <img src="img/work/kit_sq.jpg" width="780" height="780" alt="" data-dark loading="lazy">
     </div>
     <p class="work__fact work__fact--r" id="work-detail">Свой домен, оплата, аналитика</p>
   </div>
@@ -567,12 +568,14 @@ document.documentElement.classList.add('js');
 
   /* work: the name crossing the middle sets the picture */
   var names = [].slice.call(document.querySelectorAll('.work__name'));
+  var frame = document.getElementById('work-frame');
   var imgs = [].slice.call(document.querySelectorAll('#work-frame img'));
   var kind = document.getElementById('work-kind'), detail = document.getElementById('work-detail');
   function setWork(a) {
     var i = +a.dataset.i;
     names.forEach(function (n) { n.setAttribute('aria-current', n === a ? 'true' : 'false'); });
     imgs.forEach(function (im, k) { im.classList.toggle('is-on', k === i); if (k === i && im.loading === 'lazy') im.loading = 'eager'; });
+    frame.classList.toggle('is-dark', imgs[i].hasAttribute('data-dark'));
     kind.textContent = a.dataset.kind;
     detail.textContent = a.dataset.detail;
   }
