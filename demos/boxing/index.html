@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Удар: боксёрский клуб на Ленинградском проспекте</title>
+<meta name="description" content="Бокс для взрослых с нуля и продолжающих, женские группы, дети с 7 лет, персональные тренировки. Ленинградский проспект, 31. Каждый день 7:00-23:00. Пробная тренировка бесплатно.">
+<meta name="theme-color" content="#ff2414">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23ff2414'/%3E%3Ctext x='16' y='26' text-anchor='middle' font-family='Arial Narrow,Arial' font-weight='900' font-size='26'%3E%D0%A3%3C/text%3E%3C/svg%3E">
+<link rel="preload" href="fonts/fira-sans-extra-condensed-cyrillic-900.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/onest-cyrillic-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Перейти к содержанию</a>
+
+<header class="bar" id="bar">
+  <a class="bar__logo" href="#top" aria-label="Удар, в начало страницы">Удар</a>
+  <nav class="bar__nav" aria-label="Разделы">
+    <a href="#directions">Направления</a>
+    <a href="#schedule">Расписание</a>
+    <a href="#coaches">Тренеры</a>
+    <a href="#prices">Цены</a>
+    <a href="#find">Как найти</a>
+  </nav>
+  <a class="btn" href="#trial">Пробная тренировка</a>
+  <button class="bar__menu" type="button" aria-expanded="false" aria-controls="menu">Меню</button>
+</header>
+
+<div class="menu" id="menu" hidden>
+  <a class="menu__link" href="#directions">Направления</a>
+  <a class="menu__link" href="#schedule">Расписание</a>
+  <a class="menu__link" href="#coaches">Тренеры</a>
+  <a class="menu__link" href="#prices">Цены</a>
+  <a class="menu__link" href="#find">Как найти</a>
+  <a class="btn" href="#trial">Пробная тренировка бесплатно</a>
+  <p class="menu__info">Ленинградский проспект, 31. Каждый день 7:00-23:00.<br><a href="tel:+74950003131">+7 495 000-31-31</a></p>
+</div>
+
+<main id="main">
+
+<section class="hero f-red" id="top" aria-label="Удар, боксёрский клуб">
+  <div class="hero__line">
+    <h1 class="hero__name" aria-label="Удар"><span>У</span><span>Д</span><span>А</span><span>Р</span></h1>
+    <div class="hero__film">
+      <video autoplay muted loop playsinline preload="auto" poster="img/bag-poster.jpg" aria-hidden="true" tabindex="-1">
+        <source src="img/bag.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+  <div class="hero__top">
+    <p class="hero__lead">Боксёрский клуб на Ленинградском проспекте. Учим с нуля взрослых и детей с 7 лет, есть женские группы.</p>
+    <a class="btn" href="#trial">Пробная тренировка бесплатно</a>
+  </div>
+  <p class="hero__status" id="hero-status"><b>Каждый день 7:00-23:00</b><span>Первая тренировка бесплатно</span></p>
+  <div class="hero__foot">
+    <p>Ленинградский проспект, 31, цокольный этаж</p>
+    <p>Метро «Динамо», 7 минут пешком</p>
+  </div>
+</section>
+
+<section class="sec f-white dirs" id="directions" aria-labelledby="dirs-h">
+  <h2 class="d h2" id="dirs-h" data-reveal>Направления</h2>
+  <div class="mosaic">
+    <div class="tile t-grey s6r3" data-reveal>
+      <p class="tile__statement">Пять форматов для разного возраста и уровня. Технику ставим с первого занятия, спарринг только по желанию.</p>
+      <p>Не знаете, с чего начать? Приходите на пробную в группу «Взрослые с нуля». Тренер посмотрит и подскажет, куда дальше.</p>
+    </div>
+    <div class="tile t-red s3r3 tile--fig" data-reveal>
+      <p class="d tile__fig">3:00</p>
+      <p>Столько длится раунд. Потом минута отдыха и снова работа. По раундам занимаются все группы, даже дети.</p>
+    </div>
+    <div class="tile t-black s3r3 tile--list" data-reveal>
+      <h3 class="d h3">В каждом занятии</h3>
+      <ul class="tile__list">
+        <li>Разминка и скакалка</li>
+        <li>Стойка, удары и защита</li>
+        <li>Лапы с тренером и мешки</li>
+        <li>Пресс и растяжка</li>
+      </ul>
+    </div>
+
+    <figure class="tile tile--photo s6r4" data-reveal>
+      <img src="img/dir-novice.jpg" width="1600" height="1066" alt="Тренер держит лапы, девушка в перчатках бьёт прямой" loading="lazy" style="object-position:40% 50%">
+    </figure>
+    <article class="tile t-black s6r4" id="dir-novice" data-reveal>
+      <h3 class="d h3">Взрослые с нуля</h3>
+      <p class="tile__meta">60 минут, до 12 человек, с 16 лет</p>
+      <dl class="tile__dl">
+        <div><dt>Кому</dt><dd>Тем, кто ни разу не бил по груше. Подготовка не нужна, вес и возраст не важны.</dd></div>
+        <div><dt>Как проходит</dt><dd>Стойка и удары перед зеркалом, лапы с тренером, мешки раундами по 2 минуты. Спарринга нет.</dd></div>
+      </dl>
+      <button class="tile__go" type="button" data-go="novice">Расписание группы</button>
+    </article>
+
+    <figure class="tile tile--photo s3r4" data-reveal>
+      <img src="img/dir-women.jpg" width="1600" height="1066" alt="Девушка в перчатках бьёт по мешку" loading="lazy" style="object-position:74% 50%">
+    </figure>
+    <article class="tile t-red s3r4" id="dir-women" data-reveal>
+      <h3 class="d h3">Женский бокс</h3>
+      <p class="tile__meta">60 минут, до 10 человек</p>
+      <dl class="tile__dl">
+        <div><dt>Кому</dt><dd>Женщинам любого уровня. В группе только девушки, ведёт Ольга Ветрова.</dd></div>
+        <div><dt>Как проходит</dt><dd>Удары и защита, лапы и мешки, интервалы на выносливость, пресс. Друг с другом не бьёмся.</dd></div>
+      </dl>
+      <button class="tile__go" type="button" data-go="women">Расписание группы</button>
+    </article>
+    <figure class="tile tile--photo s3r4" data-reveal>
+      <img src="img/dir-adv.jpg" width="1600" height="1066" alt="Двое боксёров в шлемах в ближнем бою" loading="lazy" style="object-position:45% 50%">
+    </figure>
+    <article class="tile t-grey s3r4" id="dir-adv" data-reveal>
+      <h3 class="d h3">Продолжающие</h3>
+      <p class="tile__meta">90 минут, до 14 человек</p>
+      <dl class="tile__dl">
+        <div><dt>Кому</dt><dd>Тем, кто занимается от полугода и держит стойку без подсказок.</dd></div>
+        <div><dt>Как проходит</dt><dd>Комбинации на лапах, работа в парах, вольные бои по 3 минуты в шлеме и с капой. Спарринг по желанию.</dd></div>
+      </dl>
+      <button class="tile__go" type="button" data-go="adv">Расписание группы</button>
+    </article>
+
+    <figure class="tile tile--photo s6r4 c7" data-reveal>
+      <img src="img/dir-kids.jpg" width="1600" height="1066" alt="Мальчик в шлеме бьёт по лапам тренера в ринге" loading="lazy" style="object-position:45% 50%">
+    </figure>
+    <article class="tile t-black s6r4 c1" id="dir-kids" data-reveal>
+      <h3 class="d h3">Дети с 7 лет</h3>
+      <p class="tile__meta">60 минут, до 10 человек, 3 раза в неделю</p>
+      <dl class="tile__dl">
+        <div><dt>Кому</dt><dd>Две группы по возрасту, 7-10 и 11-14 лет. Ведёт детский тренер Артём Зуев.</dd></div>
+        <div><dt>Как проходит</dt><dd>Игры на ловкость, стойка и удары, лапы с тренером. Лёгкий контакт с 11 лет и только в шлеме. Родители ждут в холле.</dd></div>
+      </dl>
+      <button class="tile__go" type="button" data-go="kids">Расписание группы</button>
+    </article>
+
+    <figure class="tile tile--photo s6r3" data-reveal>
+      <img src="img/dir-personal.jpg" width="1600" height="1066" alt="Тренер с лапами занимается с ученицей один на один" loading="lazy" style="object-position:50% 45%">
+    </figure>
+    <article class="tile t-red s6r3" id="dir-personal" data-reveal>
+      <h3 class="d h3">Персональные</h3>
+      <p class="tile__meta">60 минут, один на один</p>
+      <dl class="tile__dl">
+        <div><dt>Кому</dt><dd>Тем, кому нужно быстрее или в удобное время. Подойдёт под соревнования, снижение веса или возвращение после перерыва.</dd></div>
+        <div><dt>Как проходит</dt><dd>Малый зал и тренер только для вас. План на каждое занятие, видео техники вам в телефон.</dd></div>
+      </dl>
+      <button class="tile__go" type="button" data-go="personal">Свободные окна</button>
+    </article>
+  </div>
+</section>
+
+<section class="sec f-black sched" id="schedule" aria-labelledby="sched-h">
+  <div class="sched__head">
+    <h2 class="d h2" id="sched-h" data-reveal>Расписание на неделю</h2>
+    <p class="sched__now" id="sched-now" data-reveal>Каждый день с 7:00 до 23:00. Нажмите на занятие, чтобы записаться на пробную.</p>
+  </div>
+  <div class="filters" data-reveal>
+    <div class="chips" role="group" aria-label="Направление">
+      <button class="chip" type="button" data-f="dir" data-v="all" aria-pressed="true">Все</button>
+      <button class="chip" type="button" data-f="dir" data-v="novice" aria-pressed="false">Новички</button>
+      <button class="chip" type="button" data-f="dir" data-v="adv" aria-pressed="false">Продолжающие</button>
+      <button class="chip" type="button" data-f="dir" data-v="women" aria-pressed="false">Женский бокс</button>
+      <button class="chip" type="button" data-f="dir" data-v="kids" aria-pressed="false">Дети</button>
+      <button class="chip" type="button" data-f="dir" data-v="personal" aria-pressed="false">Персональные</button>
+    </div>
+    <div class="chips" role="group" aria-label="Время суток">
+      <button class="chip" type="button" data-f="part" data-v="all" aria-pressed="true">Весь день</button>
+      <button class="chip" type="button" data-f="part" data-v="m" aria-pressed="false">Утро<small>7-12</small></button>
+      <button class="chip" type="button" data-f="part" data-v="d" aria-pressed="false">День<small>12-17</small></button>
+      <button class="chip" type="button" data-f="part" data-v="e" aria-pressed="false">Вечер<small>17-23</small></button>
+    </div>
+    <p class="sched__count" id="sched-count" aria-live="polite">Все 45 занятий недели</p>
+  </div>
+  <div class="week" id="week">
+    <div class="day" data-day="mon"><h3 class="day__name"><span class="day__full">Понедельник</span><span class="day__today">сегодня</span></h3><ul class="day__list">
+      <li class="slot-li" data-dir="novice" data-part="m"><button class="slot" type="button" data-id="mon-730" data-start="7:30" data-end="8:30"><b>7:30-8:30</b><span class="slot__dir">Взрослые с нуля</span><span>Ольга Ветрова</span><span>Зал «Груши»</span></button></li>
+      <li class="slot-li" data-dir="personal" data-part="d"><button class="slot" type="button" data-id="mon-1200" data-start="12:00" data-end="13:00"><b>12:00-13:00</b><span class="slot__dir">Персональная<small>свободное окно</small></span><span>Денис Орлов</span><span>Малый зал</span></button></li>
+      <li class="slot-li" data-dir="kids" data-part="d"><button class="slot" type="button" data-id="mon-1600" data-start="16:00" data-end="17:00"><b>16:00-17:00</b><span class="slot__dir">Дети 11-14 лет</span><span>Артём Зуев</span><span>Зал «Ринг»</span></button></li>
+      <li class="slot-li" data-dir="women" data-part="e"><button class="slot" type="button" data-id="mon-1800" data-start="18:00" data-end="19:00"><b>18:00-19:00</b><span class="slot__dir">Женский бокс</span><span>Ольга Ветрова</span><span>Зал «Груши»</span></button></li>
+      <li class="slot-li" data-dir="novice" data-part="e"><button class="slot" type="button" data-id="mon-1915" data-start="19:15" data-end="20:15"><b>19:15-20:15</b><span class="slot__dir">Взрослые с нуля</span><span>Денис Орлов</span><span>Зал «Груши»</span></button></li>
+      <li class="slot-li" data-dir="adv" data-part="e"><button class="slot" type="button" data-id="mon-1930" data-start="19:30" data-end="21:00"><b>19:30-21:00</b><span class="slot__dir">Продолжающие</span><span>Тимур Касимов</span><span>Зал «Ринг»</span></button></li>
+      <li class="slot-li" data-dir="personal" data-part="e"><button class="slot" type="button" data-id="mon-2100" data-start="21:00" data-end="22:00"><b>21:00-22:00</b><span class="slot__dir">Персональная<small>свободное окно</small></span><span>Тимур Касимов</span><span>Малый зал</span></button></li>
+    </ul><p class="day__empty" hidden>По фильтру в этот день занятий нет</p></div>
+    <div class="day" data-day="tue"><h3 class="day__name"><span class="day__full">Вторник</span><span class="day__today">сегодня</span></h3><ul class="day__list">
+      <li class="slot-li" data-dir="adv" data-part="m"><button class="slot" type="button" data-id="tue-700" data-start="7:00" data-end="8:30"><b>7:00-8:30</b><span class="slot__dir">Продолжающие</span><span>Тимур Касимов</span><span>Зал «Ринг»</span></button></li>
+      <li class="slot-li" data-dir="women" data-part="m"><button class="slot" type="button" data-id="tue-900" data-start="9:00" data-end="10:00"><b>9:00-10:00</b><span class="slot__dir">Женский бокс</span><span>Ольга Ветрова</span><span>Зал «Груши»</span></button></li>
+      <li class="slot-li" data-dir="personal" data-part="d"><button class="slot" type="button" data-id="tue-1400" data-start="14:00" data-end="15:00"><b>14:00-15:00</b><span class="slot__dir">Персональная<small>свободное окно</small></span><span>Ольга Ветрова</span><span>Малый зал</span></button></li>
+      <li class="slot-li" data-dir="kids" data-part="e"><button class="slot" type="button" data-id="tue-1700" data-start="17:00" data-end="18:00"><b>17:00-18:00</b><span class="slot__dir">Дети 7-10 лет</span><span>Артём Зуев</span><span>Малый зал</span></button></li>
+      <li class="slot-li" data-dir="novice" data-part="e"><button class="slot" type="button" data-id="tue-1830" data-start="18:30" data-end="19:30"><b>18:30-19:30</b><span class="slot__dir">Взрослые с нуля</span><span>Денис Орлов</span><span>Зал «Груши»</span></button></li>
+      <li class="slot-li" data-dir="adv" data-part="e"><button class="slot" type="button" data-id="tue-1930" data-start="19:30" data-end="21:00"><b>19:30-21:00</b><span class="slot__dir">Продолжающие</span><span>Тимур Касимов</span><span>Зал «Ринг»</span></button></li>
+      <li class="slot-li" data-dir="women" data-part="e"><button class="slot" type="button" data-id="tue-1945" data-start="19:45" data-end="20:45"><b>19:45-20:45</b><span class="slot__dir">Женский бокс</span><span>Ольга Ветрова</span><span>Зал «Груши»</span></button></li>
+      <li class="slot-li" data-dir="novice" data-part="e"><button class="slot" type="button" data-id="tue-2100" data-start="21:00" data-end="22:00"><b>21:00-22:00</b><span class="slot__dir">Взрослые с нуля</span><span>Денис Орлов</span><span>Зал «Груши»</span></button></li>
+    </ul><p class="day__empty" hidden>По фильтру в этот день занятий нет</p></div>
+    <div class="day" data-day="wed"><h3 class="day__name"><span class="day__full">Среда</span><span class="day__today">сегодня</span></h3><ul class="day__list">
+      <li class="slot-li" data-dir="novice" data-part="m"><button class="slot" type="button" data-id="wed-730" data-start="7:30" data-end="8:30"><b>7:30-8:30</b><span class="slot__dir">Взрослые с нуля</span><span>Ольга Ветрова</span><span>Зал «Груши»</span></button></li>
+      <li class="slot-li" data-dir="personal" data-part="d"><button class="slot" type="button" data-id="wed-1200" data-start="12:00" data-end="13:00"><b>12:00-13:00</b><span class="slot__dir">Персональная<small>свободное окно</small></span><span>Тимур Касимов</span><span>Малый зал</span></button></li>
+      <li class="slot-li" data-dir="kids" data-part="d"><button class="slot" type="button" data-id="wed-1600" data-start="16:00" data-end="17:00"><b>16:00-17:00</b><span class="slot__dir">Дети 11-14 лет</span><span>Артём Зуев</span><span>Зал «Ринг»</span></button></li>
+      <li class="slot-li" data-dir="women" data-part="e"><button class="slot" type="button" data-id="wed-1800" data-start="18:00" data-end="19:00"><b>18:00-19:00</b><span class="slot__dir">Женский бокс</span><span>Ольга Ветрова</span><span>Зал «Груши»</span></button></li>
+      <li class="slot-li" data-dir="novice" data-part="e"><button class="slot" type="button" data-id="wed-1915" data-start="19:15" data-end="20:15"><b>19:15-20:15</b><span class="slot__dir">Взрослые с нуля</span><span>Денис Орлов</span><span>Зал «Груши»</span></button></li>
+      <li class="slot-li" data-dir="adv" data-part="e"><button class="slot" type="button" data-id="wed-1930" data-start="19:30" data-end="21:00"><b>19:30-21:00</b><span class="slot__dir">Продолжающие</span><span>Тимур Касимов</span><span>Зал «Ринг»</span></button></li>
+      <li class="slot-li" data-dir="personal" data-part="e"><button class="slot" type="button" data-id="wed-2100" data-start="21:00" data-end="22:00"><b>21:00-22:00</b><span class="slot__dir">Персональная<small>свободное окно</small></span><span>Денис Орлов</span><span>Малый зал</span></button></li>
+    </ul><p class="day__empty" hidden>По фильтру в этот день занятий нет</p></div>
+    <div class="day" data-day="thu"><h3 class="day__name"><span class="day__full">Четверг</span><span class="day__today">сегодня</span></h3><ul class="day__list">
+      <li class="slot-li" data-dir="adv" data-part="m"><button class="slot" type="button" data-id="thu-700" data-start="7:00" data-end="8:30"><b>7:00-8:30</b><span class="slot__dir">Продолжающие</span><span>Тимур Касимов</span><span>Зал «Ринг»</span></button></li>
+      <li class="slot-li" data-dir="women" data-part="m"><button class="slot" type="button" data-id="thu-900" data-start="9:00" data-end="10:00"><b>9:00-10:00</b><span class="slot__dir">Женский бокс</span><span>Ольга Ветрова</span><span>Зал «Груши»</span></button></li>
+      <li class="slot-li" data-dir="personal" data-part="d"><button class="slot" type="button" data-id="thu-1400" data-start="14:00" data-end="15:00"><b>14:00-15:00</b><span class="slot__dir">Персональная<small>свободное окно</small></span><span>Денис Орлов</span><span>Малый зал</span></button></li>
+      <li class="slot-li" data-dir="kids" data-part="e"><button class="slot" type="button" data-id="thu-1700" data-start="17:00" data-end="18:00"><b>17:00-18:00</b><span class="slot__dir">Дети 7-10 лет</span><span>Артём Зуев</span><span>Малый зал</span></button></li>
+      <li class="slot-li" data-dir="novice" data-part="e"><button class="slot" type="button" data-id="thu-1830" data-start="18:30" data-end="19:30"><b>18:30-19:30</b><span class="slot__dir">Взрослые с нуля</span><span>Денис Орлов</span><span>Зал «Груши»</span></button></li>
+      <li class="slot-li" data-dir="adv" data-part="e"><button class="slot" type="button" data-id="thu-1930" data-start="19:30" data-end="21:00"><b>19:30-21:00</b><span class="slot__dir">Продолжающие</span><span>Тимур Касимов</span><span>Зал «Ринг»</span></button></li>
+      <li class="slot-li" data-dir="women" data-part="e"><button class="slot" type="button" data-id="thu-1945" data-start="19:45" data-end="20:45"><b>19:45-20:45</b><span class="slot__dir">Женский бокс</span><span>Ольга Ветрова</span><span>Зал «Груши»</span></button></li>
+      <li class="slot-li" data-dir="novice" data-part="e"><button class="slot" type="button" data-id="thu-2100" data-start="21:00" data-end="22:00"><b>21:00-22:00</b><span class="slot__dir">Взрослые с нуля</span><span>Денис Орлов</span><span>Зал «Груши»</span></button></li>
+    </ul><p class="day__empty" hidden>По фильтру в этот день занятий нет</p></div>
+    <div class="day" data-day="fri"><h3 class="day__name"><span class="day__full">Пятница</span><span class="day__today">сегодня</span></h3><ul class="day__list">
+      <li class="slot-li" data-dir="novice" data-part="m"><button class="slot" type="button" data-id="fri-730" data-start="7:30" data-end="8:30"><b>7:30-8:30</b><span class="slot__dir">Взрослые с нуля</span><span>Ольга Ветрова</span><span>Зал «Груши»</span></button></li>
+      <li class="slot-li" data-dir="personal" data-part="d"><button class="slot" type="button" data-id="fri-1200" data-start="12:00" data-end="13:00"><b>12:00-13:00</b><span class="slot__dir">Персональная<small>свободное окно</small></span><span>Ольга Ветрова</span><span>Малый зал</span></button></li>
+      <li class="slot-li" data-dir="kids" data-part="d"><button class="slot" type="button" data-id="fri-1600" data-start="16:00" data-end="17:00"><b>16:00-17:00</b><span class="slot__dir">Дети 11-14 лет</span><span>Артём Зуев</span><span>Зал «Ринг»</span></button></li>
+      <li class="slot-li" data-dir="women" data-part="e"><button class="slot" type="button" data-id="fri-1800" data-start="18:00" data-end="19:00"><b>18:00-19:00</b><span class="slot__dir">Женский бокс</span><span>Ольга Ветрова</span><span>Зал «Груши»</span></button></li>
+      <li class="slot-li" data-dir="novice" data-part="e"><button class="slot" type="button" data-id="fri-1915" data-start="19:15" data-end="20:15"><b>19:15-20:15</b><span class="slot__dir">Взрослые с нуля</span><span>Денис Орлов</span><span>Зал «Груши»</span></button></li>
+      <li class="slot-li" data-dir="adv" data-part="e"><button class="slot" type="button" data-id="fri-1930" data-start="19:30" data-end="21:00"><b>19:30-21:00</b><span class="slot__dir">Продолжающие</span><span>Тимур Касимов</span><span>Зал «Ринг»</span></button></li>
+      <li class="slot-li" data-dir="personal" data-part="e"><button class="slot" type="button" data-id="fri-2100" data-start="21:00" data-end="22:00"><b>21:00-22:00</b><span class="slot__dir">Персональная<small>свободное окно</small></span><span>Денис Орлов</span><span>Малый зал</span></button></li>
+    </ul><p class="day__empty" hidden>По фильтру в этот день занятий нет</p></div>
+    <div class="day" data-day="sat"><h3 class="day__name"><span class="day__full">Суббота</span><span class="day__today">сегодня</span></h3><ul class="day__list">
+      <li class="slot-li" data-dir="kids" data-part="m"><button class="slot" type="button" data-id="sat-1000" data-start="10:00" data-end="11:00"><b>10:00-11:00</b><span class="slot__dir">Дети 7-10 лет</span><span>Артём Зуев</span><span>Малый зал</span></button></li>
+      <li class="slot-li" data-dir="novice" data-part="m"><button class="slot" type="button" data-id="sat-1100" data-start="11:00" data-end="12:00"><b>11:00-12:00</b><span class="slot__dir">Взрослые с нуля</span><span>Денис Орлов</span><span>Зал «Груши»</span></button></li>
+      <li class="slot-li" data-dir="adv" data-part="d"><button class="slot" type="button" data-id="sat-1230" data-start="12:30" data-end="14:00"><b>12:30-14:00</b><span class="slot__dir">Продолжающие</span><span>Тимур Касимов</span><span>Зал «Ринг»</span></button></li>
+      <li class="slot-li" data-dir="personal" data-part="d"><button class="slot" type="button" data-id="sat-1500" data-start="15:00" data-end="16:00"><b>15:00-16:00</b><span class="slot__dir">Персональная<small>свободное окно</small></span><span>Ольга Ветрова</span><span>Малый зал</span></button></li>
+    </ul><p class="day__empty" hidden>По фильтру в этот день занятий нет</p></div>
+    <div class="day" data-day="sun"><h3 class="day__name"><span class="day__full">Воскресенье</span><span class="day__today">сегодня</span></h3><ul class="day__list">
+      <li class="slot-li" data-dir="women" data-part="m"><button class="slot" type="button" data-id="sun-1000" data-start="10:00" data-end="11:00"><b>10:00-11:00</b><span class="slot__dir">Женский бокс</span><span>Ольга Ветрова</span><span>Зал «Груши»</span></button></li>
+      <li class="slot-li" data-dir="novice" data-part="m"><button class="slot" type="button" data-id="sun-1115" data-start="11:15" data-end="12:15"><b>11:15-12:15</b><span class="slot__dir">Взрослые с нуля</span><span>Денис Орлов</span><span>Зал «Груши»</span></button></li>
+      <li class="slot-li" data-dir="adv" data-part="d"><button class="slot" type="button" data-id="sun-1230" data-start="12:30" data-end="14:00"><b>12:30-14:00</b><span class="slot__dir">Продолжающие</span><span>Тимур Касимов</span><span>Зал «Ринг»</span></button></li>
+      <li class="slot-li" data-dir="personal" data-part="d"><button class="slot" type="button" data-id="sun-1600" data-start="16:00" data-end="17:00"><b>16:00-17:00</b><span class="slot__dir">Персональная<small>свободное окно</small></span><span>Денис Орлов</span><span>Малый зал</span></button></li>
+    </ul><p class="day__empty" hidden>По фильтру в этот день занятий нет</p></div>
+  </div>
+</section>
+
+<section class="sec f-white coaches" id="coaches" aria-labelledby="coaches-h">
+  <div class="coaches__head">
+    <h2 class="d h2" id="coaches-h" data-reveal>Тренеры</h2>
+    <p class="lead" data-reveal>Все четверо выступали сами и тренируют от 8 лет. У каждого свои группы, поэтому вы заранее знаете, к кому идёте.</p>
+  </div>
+  <ul class="team">
+    <li class="coach" data-shutter>
+      <figure class="coach__pic tint"><img src="img/coach-timur.jpg" width="720" height="900" alt="Тимур Касимов в ринге, руки в стойке" loading="lazy"><span class="slats" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></span></figure>
+      <h3 class="d h3">Тимур Касимов</h3>
+      <p class="coach__role">Старший тренер</p>
+      <dl class="tape">
+        <div><dt>Звание</dt><dd>Мастер спорта России</dd></div>
+        <div><dt>Стаж</dt><dd>16 лет</dd></div>
+        <div><dt>Ведёт</dt><dd>Продолжающих, спарринги, персональные</dd></div>
+        <div><dt>Стойка</dt><dd>Правша</dd></div>
+      </dl>
+    </li>
+    <li class="coach" data-shutter>
+      <figure class="coach__pic"><img src="img/coach-olga.jpg" width="720" height="900" alt="Ольга Ветрова у канатов ринга" loading="lazy"><span class="slats" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></span></figure>
+      <h3 class="d h3">Ольга Ветрова</h3>
+      <p class="coach__role">Тренер женских групп</p>
+      <dl class="tape">
+        <div><dt>Звание</dt><dd>Кандидат в мастера спорта</dd></div>
+        <div><dt>Стаж</dt><dd>9 лет</dd></div>
+        <div><dt>Ведёт</dt><dd>Женский бокс, утренних новичков, персональные</dd></div>
+        <div><dt>Стойка</dt><dd>Левша</dd></div>
+      </dl>
+    </li>
+    <li class="coach" data-shutter>
+      <figure class="coach__pic"><img src="img/coach-denis.jpg" width="720" height="900" alt="Денис Орлов в стойке, руки в бинтах" loading="lazy"><span class="slats" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></span></figure>
+      <h3 class="d h3">Денис Орлов</h3>
+      <p class="coach__role">Тренер новичков</p>
+      <dl class="tape">
+        <div><dt>Звание</dt><dd>Мастер спорта России</dd></div>
+        <div><dt>Стаж</dt><dd>11 лет</dd></div>
+        <div><dt>Ведёт</dt><dd>Взрослых с нуля, персональные</dd></div>
+        <div><dt>Стойка</dt><dd>Правша</dd></div>
+      </dl>
+    </li>
+    <li class="coach" data-shutter>
+      <figure class="coach__pic tint"><img src="img/coach-artem.jpg" width="720" height="900" alt="Артём Зуев в ринге, в перчатках" loading="lazy"><span class="slats" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></span></figure>
+      <h3 class="d h3">Артём Зуев</h3>
+      <p class="coach__role">Детский тренер</p>
+      <dl class="tape">
+        <div><dt>Звание</dt><dd>Кандидат в мастера спорта</dd></div>
+        <div><dt>Стаж</dt><dd>8 лет</dd></div>
+        <div><dt>Ведёт</dt><dd>Детей 7-10 и 11-14 лет</dd></div>
+        <div><dt>Стойка</dt><dd>Правша</dd></div>
+      </dl>
+    </li>
+  </ul>
+</section>
+
+<section class="prices" id="prices" aria-labelledby="prices-h">
+  <div class="plan-main f-red">
+    <h2 class="d h2" id="prices-h" data-reveal>Абонементы</h2>
+    <div class="plan-main__body" data-reveal>
+      <h3 class="d h3">Безлимит на месяц</h3>
+      <p class="lead">Для тех, кто тренируется 3 раза в неделю и чаще.</p>
+      <p>Любые группы вашего уровня 30 дней подряд, утром, днём и вечером. Перчатки и бинты клуба бесплатно, заморозка до 14 дней. При 3 тренировках в неделю выходит меньше 1 000 ₽ за занятие.</p>
+    </div>
+    <div class="plan-main__foot" data-reveal>
+      <p class="d price">11 900 ₽<span>за 30 дней</span></p>
+      <a class="btn" href="#trial">Начать с пробной</a>
+    </div>
+  </div>
+  <div class="plan-list f-black">
+    <ul class="plans">
+      <li data-reveal><div class="plans__row"><h3 class="d h3">Разовое занятие</h3><p class="d plans__price">1 400 ₽</p></div><p>Одна групповая тренировка в любой день, если пока не хотите брать абонемент.</p></li>
+      <li data-reveal><div class="plans__row"><h3 class="d h3">8 занятий</h3><p class="d plans__price">8 800 ₽</p></div><p>Абонемент на 5 недель. Получается 1 100 ₽ за тренировку вместо 1 400 ₽.</p></li>
+      <li data-reveal><div class="plans__row"><h3 class="d h3">Персональная</h3><p class="d plans__price">3 900 ₽</p></div><p>60 минут один на один с тренером. Пакет из 10 тренировок стоит 35 000 ₽.</p></li>
+      <li data-reveal><div class="plans__row"><h3 class="d h3">Детский</h3><p class="d plans__price">7 900 ₽</p></div><p>Месяц занятий, 3 тренировки в неделю. Пропуск по болезни переносим на следующий месяц.</p></li>
+    </ul>
+    <p class="plans__note">Первая тренировка в любом направлении бесплатно. Оплата картой, по СБП или наличными на ресепшене.</p>
+  </div>
+</section>
+
+<section class="sec f-white kit" id="kit" aria-labelledby="kit-h">
+  <div class="kit__in">
+    <h2 class="d h2" id="kit-h" data-reveal>Что взять с собой</h2>
+    <p class="lead" data-reveal>На первую тренировку хватит формы, кроссовок и воды. Перчатки и бинты дадим. Приходите за 15 минут, чтобы спокойно переодеться и замотать бинты вместе с тренером.</p>
+    <div class="cards" data-reveal>
+      <details class="card c-red" name="kit" open style="--i:0"><summary><span class="card__tab">Форма</span><span class="card__q">В чём заниматься?</span></summary><div class="card__a"><p>Футболка и шорты или леггинсы, которые не жалко промочить. За час вы вспотеете насквозь. Есть раздевалки с душем и шкафчиками на замке.</p></div></details>
+      <details class="card c-black" name="kit" style="--i:1"><summary><span class="card__tab">Обувь</span><span class="card__q">Какие нужны кроссовки?</span></summary><div class="card__a"><p>Любые на тонкой плоской подошве. Беговые с толстой пяткой мешают двигаться в стойке. Боксёрки покупать пока не нужно.</p></div></details>
+      <details class="card c-grey" name="kit" style="--i:2"><summary><span class="card__tab">Перчатки</span><span class="card__q">Нужны свои перчатки и бинты?</span></summary><div class="card__a"><p>На пробную дадим бесплатно перчатки на 12-14 унций и бинты. Свои понадобятся позже. Бинты длиной 3,5 метра стоят 400-600 ₽, перчатки от 3 500 ₽, размер подскажет тренер.</p></div></details>
+      <details class="card c-red" name="kit" style="--i:3"><summary><span class="card__tab">Вода</span><span class="card__q">Что ещё положить в сумку?</span></summary><div class="card__a"><p>Бутылку воды на 0,5-1 литр, полотенце и сменную футболку. Кулер с водой в зале тоже есть.</p></div></details>
+      <details class="card c-black" name="kit" style="--i:4"><summary><span class="card__tab">Еда</span><span class="card__q">Можно ли есть перед тренировкой?</span></summary><div class="card__a"><p>Лёгкий перекус за 1,5-2 часа до начала. С полным желудком прыгать на скакалке тяжело.</p></div></details>
+      <details class="card c-grey" name="kit" style="--i:5"><summary><span class="card__tab">Спарринг</span><span class="card__q">Будут ли бить на первой тренировке?</span></summary><div class="card__a"><p>Нет. На пробной только стойка, удары, лапы и мешок. Вольные бои бывают в группе продолжающих, по желанию, в шлеме и с капой.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<section class="hall" id="hall" aria-labelledby="hall-h">
+  <figure class="hall__pic"><img src="img/ring.jpg" width="1600" height="1068" alt="Угол ринга с белыми канатами" loading="lazy"></figure>
+  <div class="hall__bar f-red">
+    <h2 class="d h2" id="hall-h" data-reveal>Зал внизу</h2>
+    <p class="lead" data-reveal>Цокольный этаж на 420 м² с потолками 3,6 метра. Две раздевалки с душем, шкафчики на замке, кулер с водой.</p>
+    <dl class="halls">
+      <div data-reveal><dt class="d h3">Ринг</dt><dd>Ринг 6 на 6 метров для продолжающих и спаррингов.</dd></div>
+      <div data-reveal><dt class="d h3">Груши</dt><dd>18 мешков и груш, зеркала во всю стену.</dd></div>
+      <div data-reveal><dt class="d h3">Малый зал</dt><dd>Детские группы и персональные тренировки.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="sec f-black find" id="find" aria-labelledby="find-h">
+  <h2 class="d h2" id="find-h" data-reveal>Как нас найти</h2>
+  <div class="find__grid">
+    <ul class="addr">
+      <li data-reveal><a href="https://yandex.ru/maps/?text=%D0%9B%D0%B5%D0%BD%D0%B8%D0%BD%D0%B3%D1%80%D0%B0%D0%B4%D1%81%D0%BA%D0%B8%D0%B9%20%D0%BF%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82%2C%2031%2C%20%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0" target="_blank" rel="noopener">Ленинградский проспект, 31</a></li>
+      <li data-reveal>Цокольный этаж, вход со двора</li>
+      <li data-reveal>Метро «Динамо», 7 минут</li>
+      <li data-reveal>Каждый день 7:00-23:00</li>
+      <li data-reveal><a href="tel:+74950003131">+7 495 000-31-31</a></li>
+      <li class="addr__go" data-reveal><span>Приходите</span><a class="go" href="#trial" aria-label="Записаться на пробную тренировку"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h16M12 4l8 8-8 8" fill="none" stroke="currentColor" stroke-width="3.2"/></svg></a></li>
+    </ul>
+    <figure class="map" data-reveal>
+      <svg viewBox="0 0 560 600" role="img" aria-label="Схема: от метро Динамо по Ленинградскому проспекту к арке дома 31, во дворе красная дверь клуба">
+        <rect width="560" height="600" fill="#161616"/>
+        <rect x="24" y="40" width="110" height="280" fill="#262626"/>
+        <rect x="150" y="96" width="260" height="224" fill="#fff"/>
+        <rect x="190" y="132" width="180" height="120" fill="#161616"/>
+        <rect x="258" y="252" width="44" height="68" fill="#161616"/>
+        <rect x="426" y="40" width="110" height="280" fill="#262626"/>
+        <rect x="0" y="344" width="560" height="84" fill="#333"/>
+        <rect x="24" y="452" width="230" height="128" fill="#262626"/>
+        <rect x="270" y="452" width="266" height="128" fill="#262626"/>
+        <text x="24" y="394" fill="#bdbdbd" font-family="Onest, sans-serif" font-size="19" font-weight="600">Ленинградский проспект</text>
+        <text x="164" y="304" fill="#000" font-family="Fira Sans Extra Condensed, sans-serif" font-size="46" font-weight="900">31</text>
+        <polyline points="440,470 440,404 280,404 280,214 340,214 340,140" fill="none" stroke="#ff2414" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+        <rect x="326" y="120" width="28" height="14" fill="#ff2414"/>
+        <text x="204" y="164" fill="#fff" font-family="Onest, sans-serif" font-size="16" font-weight="600">Двор</text>
+        <text x="204" y="186" fill="#bdbdbd" font-family="Onest, sans-serif" font-size="14">красная дверь</text>
+        <text x="310" y="290" fill="#fff" font-family="Onest, sans-serif" font-size="15" font-weight="600">арка</text>
+        <circle cx="440" cy="492" r="26" fill="#ff2414"/>
+        <text x="440" y="502" fill="#000" text-anchor="middle" font-family="Onest, sans-serif" font-size="26" font-weight="600">М</text>
+        <text x="300" y="534" fill="#fff" font-family="Onest, sans-serif" font-size="18" font-weight="600">Динамо</text>
+      </svg>
+      <figcaption>Вход через арку со стороны проспекта. Во дворе красная дверь с вывеской «Удар», дальше 14 ступеней вниз.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="sec f-red trial" id="trial" aria-labelledby="trial-h">
+  <h2 class="d h2" id="trial-h" data-reveal>Пробная тренировка<br> бесплатно</h2>
+  <p class="lead" data-reveal>60 минут в группе новичков или в той, что вы выбрали в расписании. Перчатки и бинты дадим. Перезвоним в течение 15 минут, с 9:00 до 22:00.</p>
+  <form class="form form--main" data-form="main" novalidate data-reveal>
+    <div class="fld"><label for="m-name">Имя</label><input id="m-name" name="name" autocomplete="given-name" required aria-describedby="m-name-e"><p class="err" id="m-name-e" aria-live="polite"></p></div>
+    <div class="fld"><label for="m-phone">Телефон</label><input id="m-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 916 123-45-67" required aria-describedby="m-phone-e"><p class="err" id="m-phone-e" aria-live="polite"></p></div>
+    <div class="fld fld--2"><label for="m-slot">Занятие</label><select id="m-slot" name="slot"><option value="">Подберите мне группу</option></select></div>
+    <div class="fld fld--3"><label for="m-note">Комментарий, если хотите</label><input id="m-note" name="note" placeholder="Опыт, травмы, удобное время"></div>
+    <button class="btn" type="submit">Записаться на пробную</button>
+    <div class="fld fld--check"><label class="check"><input type="checkbox" name="agree" aria-describedby="m-agree-e"><span>Соглашаюсь на обработку персональных данных</span></label><p class="err" id="m-agree-e" aria-live="polite"></p></div>
+  </form>
+  <h3 class="d h3 steps__h" data-reveal>Как пройдёт пробная</h3>
+  <ol class="steps">
+    <li data-reveal>Перезвоним и подберём группу по уровню и удобному времени.</li>
+    <li data-reveal>Придёте за 15 минут. Тренер покажет раздевалку и замотает бинты.</li>
+    <li data-reveal>60 минут тренировки. Вы выучите стойку, джеб и прямой и поработаете на лапах.</li>
+    <li data-reveal>Дальше решаете сами. Абонемент можно купить в тот же день или позже.</li>
+  </ol>
+</section>
+
+</main>
+
+<footer class="foot f-black">
+  <div class="foot__split">
+    <figure class="foot__pic"><img src="img/gloves.jpg" width="1600" height="1068" alt="Перчатки и лапы в ряд на полу зала" loading="lazy"></figure>
+    <div class="foot__menu">
+      <p class="d foot__logo">Удар</p>
+      <nav class="foot__nav" aria-label="Разделы сайта">
+        <ul>
+          <li><a href="#directions">Направления</a></li>
+          <li><a href="#schedule">Расписание</a></li>
+          <li><a href="#coaches">Тренеры</a></li>
+          <li><a href="#prices">Абонементы</a></li>
+          <li><a href="#find">Как найти</a></li>
+          <li><a href="#trial">Пробная тренировка</a></li>
+        </ul>
+      </nav>
+      <div class="foot__cols">
+        <p>Боксёрский клуб «Удар»<br>Ленинградский проспект, 31, цокольный этаж<br>Метро «Динамо»<br><a href="tel:+74950003131">+7 495 000-31-31</a><br>Каждый день 7:00-23:00</p>
+        <p>Демо-сайт. Дизайн и разработка: <a href="../../">Артур Лето</a><br>Фото: Pexels</p>
+      </div>
+      <p class="foot__legal">© 2026 Боксёрский клуб «Удар»</p>
+    </div>
+  </div>
+  <p class="foot__name" aria-hidden="true"><span>У</span><span>Д</span><span>А</span><span>Р</span></p>
+</footer>
+
+<aside class="demo" id="demo" aria-label="О демо-сайте">
+  <p class="demo__t">Демо-сайт от Артура Лето</p>
+  <a class="demo__a" href="https://t.me/arturleto?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%81%D0%B0%D0%B9%D1%82%20%D0%BA%D0%B0%D0%BA%20%D0%B4%D0%B5%D0%BC%D0%BE%20%C2%AB%D0%A3%D0%B4%D0%B0%D1%80%C2%BB" target="_blank" rel="noopener">Хочу такой сайт</a>
+  <button class="demo__x" type="button" aria-expanded="true" aria-label="Свернуть плашку">×</button>
+</aside>
+
+<dialog class="dlg" id="book" aria-labelledby="book-h">
+  <button class="dlg__x" type="button" data-close aria-label="Закрыть">×</button>
+  <h2 class="d dlg__h" id="book-h">Запись на пробную</h2>
+  <p class="dlg__slot" id="book-slot"><b>Выберите занятие</b></p>
+  <form class="form" data-form="book" novalidate>
+    <div class="fld"><label for="b-slot">Занятие</label><select id="b-slot" name="slot"><option value="">Подберите мне группу</option></select></div>
+    <div class="fld"><label for="b-name">Имя</label><input id="b-name" name="name" autocomplete="given-name" required aria-describedby="b-name-e"><p class="err" id="b-name-e" aria-live="polite"></p></div>
+    <div class="fld"><label for="b-phone">Телефон</label><input id="b-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 916 123-45-67" required aria-describedby="b-phone-e"><p class="err" id="b-phone-e" aria-live="polite"></p></div>
+    <div class="fld"><label class="check"><input type="checkbox" name="agree" aria-describedby="b-agree-e"><span>Соглашаюсь на обработку персональных данных</span></label><p class="err" id="b-agree-e" aria-live="polite"></p></div>
+    <button class="btn" type="submit">Записаться на это занятие</button>
+  </form>
+</dialog>
+
+<dialog class="dlg" id="done" aria-labelledby="done-h">
+  <button class="dlg__x" type="button" data-close aria-label="Закрыть">×</button>
+  <h2 class="d dlg__h" id="done-h">Демо-режим</h2>
+  <p class="lead">Это демо-сайт. На настоящем сайте заявка сразу пришла бы владельцу в Telegram.</p>
+  <div class="dlg__acts">
+    <a class="btn" href="https://t.me/arturleto?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%81%D0%B0%D0%B9%D1%82%20%D0%BA%D0%B0%D0%BA%20%D0%B4%D0%B5%D0%BC%D0%BE%20%C2%AB%D0%A3%D0%B4%D0%B0%D1%80%C2%BB" target="_blank" rel="noopener">Хочу такой сайт</a>
+    <button class="link" type="button" data-close>Закрыть</button>
+  </div>
+</dialog>
+
+<script src="app.js" defer></script>
+</body>
+</html>
