@@ -1,199 +1,690 @@
 <!doctype html>
-<html lang="ru" data-theme="neon" class="no-js">
+<html lang="ru">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Артур Лето. Сайты и Telegram-боты под ключ</title>
+<meta name="description" content="Сайты, Telegram-боты и автоматизация любой сложности. Цены и сроки открыто, оплата по этапам, код и доступы остаются у вас.">
 <meta name="robots" content="noindex">
-<title>Артур Лето. Telegram-боты и сайты</title>
-<meta name="description" content="Делаю Telegram-ботов с искусственным интеллектом и сайты: запись, заявки, оплата, ИИ-консультанты. От 3 000 ₽.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Артур Лето. Telegram-боты и сайты">
-<meta property="og:description" content="Боты с ИИ, запись, заявки и оплата. Сайты, с которых приходят заявки. От 3 000 ₽.">
-<meta property="og:image" content="https://arturleto.github.io/dev/img/og-v2.jpg">
-<meta name="theme-color" content="#0b0f1a">
-<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
-<link rel="icon" type="image/png" sizes="32x32" href="img/icons/favicon-32x32.png">
-<link rel="apple-touch-icon" sizes="180x180" href="img/icons/apple-touch-icon.png">
-<script>
-(function(){var T=["neon", "poster", "bento", "lux", "chat"];var h=document.documentElement;var q=new URLSearchParams(location.search).get('d');var t=null;
-if(q){t=T[parseInt(q,10)-1]||(T.indexOf(q)>-1?q:null);}
-if(!t){try{t=localStorage.getItem('design');}catch(x){}}
-if(T.indexOf(t)<0)t=T[0];h.setAttribute('data-theme',t);h.className='js';})();
-</script>
-<link rel="stylesheet" href="core/core.css">
-<link rel="stylesheet" href="themes/neon/theme.css">
-<link rel="stylesheet" href="themes/poster/theme.css">
-<link rel="stylesheet" href="themes/bento/theme.css">
-<link rel="stylesheet" href="themes/lux/theme.css">
-<link rel="stylesheet" href="themes/chat/theme.css">
+<meta property="og:title" content="Артур Лето. Сайты и Telegram-боты под ключ">
+<meta property="og:description" content="18 моих проектов работают прямо сейчас. Цены, сроки, условия и хостинг простыми словами.">
+<meta property="og:image" content="img/og.jpg">
+<meta name="theme-color" content="#eeecea">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wdth,wght@25..151,100..1000&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #eeecea;
+  --surface: #e4e1dd;
+  --ink: #333231;
+  --muted: #6b6763;
+  --accent: #5c6b54;
+  --accent-strong: #4b5944;
+  --accent-ink: #ffffff;
+  --field-1: #cdc3b6;
+  --field-1-ink: #333231;
+  --dark: #333231;
+  --dark-ink: #eeecea;
+  --dark-soft: #b9b3ac;
+
+  --font: "Roboto Flex", "Arial Narrow", Arial, sans-serif;
+
+  --step-small: clamp(0.8125rem, 0.79rem + 0.1vw, 0.875rem);
+  --step-body: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
+  --step-lead: clamp(1.25rem, 1.1rem + 0.7vw, 1.625rem);
+  --step-title: clamp(1.75rem, 1rem + 2.4vw, 3.25rem);
+  --step-head: clamp(2.5rem, 1.2rem + 4.2vw, 5rem);
+  --step-display: clamp(2.75rem, -0.5rem + 12.2vw, 11rem);
+
+  --margin: clamp(1rem, 2.2vw, 2rem);
+  --gutter: clamp(1rem, 2vw, 2rem);
+  --section: clamp(7.5rem, 12vw, 13rem);
+  --radius: 0px;
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-soft: cubic-bezier(0.33, 1, 0.68, 1);
+  --t-press: 140ms;
+  --t-hover: 180ms;
+  --t-ui: 240ms;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font); font-size: var(--step-body); line-height: 1.5; font-variation-settings: "wdth" 100; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, p, figure, ul, ol, dl, dd, table { margin: 0; }
+ul[class], ol[class] { padding: 0; list-style: none; }
+img { display: block; max-width: 100%; height: auto; }
+button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+a { color: inherit; }
+:target { scroll-margin-top: 2rem; }
+::selection { background: var(--accent); color: var(--accent-ink); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.plain { display: grid; gap: 1rem; padding: 0; list-style: none; max-width: 60ch; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+.display { font-weight: 800; font-variation-settings: "wdth" 30; text-transform: uppercase; letter-spacing: -0.01em; line-height: 0.86; }
+.wrap { padding-inline: var(--margin); }
+
+.button { display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 1.6em; background: var(--accent); color: var(--accent-ink); font-weight: 500; text-decoration: none; border-radius: var(--radius); transition: transform var(--t-press) var(--ease-out), background-color var(--t-hover) ease; }
+.button:active { transform: scale(0.97); }
+.link { text-decoration: underline; text-decoration-color: transparent; text-underline-offset: 0.22em; text-decoration-thickness: 0.07em; transition: text-decoration-color var(--t-hover) ease, color var(--t-hover) ease; }
+@media (hover: hover) and (pointer: fine) {
+  .button:hover { background-color: var(--accent-strong); }
+  .link:hover { text-decoration-color: currentColor; }
+}
+
+/* ---------- hero: card over a dim room ---------- */
+.hero { position: relative; min-height: 100svh; display: grid; place-items: center; padding: var(--margin); overflow: hidden; background: #1d1c1b; }
+.hero__bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) brightness(0.62) contrast(1.05); }
+.hero__card { position: relative; width: min(100%, 60rem); min-height: 62svh; background: var(--field-1); color: var(--field-1-ink); padding: 32px; display: flex; flex-direction: column; gap: clamp(1.5rem, 3vw, 2.5rem); }
+.hero__title { display: flex; justify-content: space-between; gap: 1rem; font-size: var(--step-title); }
+.hero__title span:nth-child(2) { text-align: center; }
+.hero__facts { font-size: var(--step-lead); font-weight: 700; line-height: 1.1; }
+.hero__lead { max-width: 34ch; font-size: var(--step-lead); line-height: 1.35; }
+.hero__foot { margin-top: auto; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 1rem; }
+.hero__credit { font-weight: 500; max-width: 16rem; line-height: 1.35; }
+.hero__more { justify-self: end; font-weight: 500; }
+
+/* ---------- work: names passing a held square ---------- */
+.work { padding-block: var(--section); position: relative; overflow: clip; --frame: min(480px, 33vw); }
+.work__stage { position: sticky; top: calc(50svh - var(--frame) / 2); height: var(--frame); margin-bottom: calc(var(--frame) * -1); z-index: 0; display: grid; grid-template-columns: 1fr var(--frame) 1fr; align-items: center; }
+.work__frame { position: relative; width: var(--frame); height: var(--frame); grid-column: 2; background: var(--surface); overflow: hidden; }
+.work__frame img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center; opacity: 0; transition: opacity 200ms ease; }
+.work__frame img.is-on { opacity: 1; }
+.work__frame::after { content: ""; position: absolute; inset: 0; background: rgba(238, 236, 234, 0.14); transition: background-color 200ms ease; }
+.work__frame.is-dark::after { background: rgba(238, 236, 234, 0.6); }
+.work__fact { line-height: 1.35; max-width: 15rem; }
+.work__fact--l { grid-column: 1; justify-self: end; text-align: right; margin-right: 48px; }
+.work__fact--r { grid-column: 3; justify-self: start; margin-left: 48px; }
+.work__list { position: relative; z-index: 1; text-align: center; }
+.work__list h2 { font-size: var(--step-display); color: var(--muted); }
+.work__name { display: block; font-size: var(--step-display); text-decoration: none; padding-block: 0.06em; transition: color var(--t-hover) ease; }
+.js .work__name { color: rgba(51, 50, 49, 0.2); }
+.js .work__name[aria-current="true"] { color: var(--ink); }
+@media (hover: hover) and (pointer: fine) { .js .work__name:hover { color: var(--ink); } }
+
+/* ---------- schedule: line-up at one type size ---------- */
+.day { background: var(--dark); color: var(--dark-ink); padding-block: var(--section); }
+.day__head { display: grid; grid-template-columns: repeat(12, 1fr); gap: var(--gutter); margin-bottom: clamp(3rem, 6vw, 5rem); }
+.day__head h2 { grid-column: 1 / span 6; font-size: var(--step-head); }
+.day__live { grid-column: 8 / span 5; align-self: end; font-size: var(--step-lead); line-height: 1.35; }
+.day__live strong { font-weight: 500; color: var(--field-1); }
+.sched { width: 100%; border-collapse: collapse; font-size: var(--step-lead); font-weight: 400; }
+.sched th, .sched td { text-align: left; padding: 0; line-height: 1.5; font-weight: 400; vertical-align: top; }
+.sched td:nth-child(1) { width: 40%; padding-right: 1em; }
+.sched td:nth-child(2) { width: 26%; padding-right: 1em; }
+.sched td:nth-child(3) { width: 22%; padding-right: 1em; color: var(--dark-soft); }
+.sched td:nth-child(4) { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.sched .part th { position: sticky; top: 0; background: var(--dark); color: var(--field-1); padding: 72px 0 20px; z-index: 1; }
+.sched tbody:first-of-type .part th { padding-top: 0; }
+.sched tr.is-next td { color: var(--field-1); }
+.sched tr.is-next td:first-child::before { content: ""; display: inline-block; width: 0.3em; height: 0.3em; border-radius: 50%; background: var(--field-1); margin-right: 0.4em; vertical-align: 0.2em; }
+
+/* ---------- pricing: plan names, one live figure ---------- */
+.price { padding-block: var(--section); }
+.price__grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: var(--gutter); align-items: start; }
+.price__names { grid-column: 1 / span 6; }
+.price__names h2 { font-size: var(--step-lead); font-weight: 500; margin-bottom: 1.5rem; }
+.plan { display: flex; align-items: center; gap: 0.25em; width: 100%; text-align: left; font-size: var(--step-head); line-height: 1.04; color: var(--muted); transition: color var(--t-hover) ease; }
+.plan::before { content: ""; width: 0.24em; height: 0.24em; border-radius: 50%; background: currentColor; opacity: 0; flex: none; transition: opacity var(--t-hover) ease; }
+.plan[aria-selected="true"] { color: var(--ink); }
+.plan[aria-selected="true"]::before { opacity: 1; }
+@media (hover: hover) and (pointer: fine) { .plan:hover { color: var(--ink); } }
+.plan__inline { display: none; }
+.price__stage { grid-column: 8 / span 5; position: sticky; top: 12vh; transition: opacity 200ms ease; }
+.price__stage.is-swapping { opacity: 0; }
+.price__fig { font-size: var(--step-head); white-space: nowrap; }
+.price__term { margin-top: 1rem; font-weight: 500; }
+.price__text { margin-top: 1.25rem; max-width: 40ch; }
+.price__stage .button { margin-top: 2rem; }
+.price__note { margin-top: clamp(3rem, 6vw, 5rem); max-width: 60ch; font-size: var(--step-lead); line-height: 1.35; }
+
+/* ---------- how: one verb at a time ---------- */
+.how__panel { position: relative; height: 100svh; overflow: hidden; background: #1d1c1b; color: var(--dark-ink); }
+.how__panel img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) brightness(0.5) contrast(1.05); }
+.how__verb { position: absolute; inset: 0; display: grid; place-items: center; font-size: var(--step-display); text-align: center; padding-inline: var(--margin); }
+.how__say { position: absolute; left: 0; bottom: 0; max-width: 38rem; padding: 2rem var(--margin) var(--margin); line-height: 1.45; background: rgba(20, 20, 20, 0.55); }
+
+/* ---------- hosting: pinned heading, passing rows ---------- */
+.host { background: var(--field-1); color: var(--field-1-ink); padding-block: var(--section); }
+.host__grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: var(--gutter); align-items: start; }
+.host__title { grid-column: 1 / span 5; position: sticky; top: 32px; }
+.host__title h2 { font-size: var(--step-head); }
+.host__title p { margin-top: 1.5rem; max-width: 30ch; }
+.host__blocks { grid-column: 7 / span 6; display: grid; gap: 120px; }
+.host__block h3 { font-size: var(--step-lead); font-weight: 700; line-height: 1.2; margin-bottom: 1.25rem; }
+.host__row { display: grid; grid-template-columns: 200px 1fr; gap: var(--gutter); align-items: start; }
+.host__block:nth-child(even) .host__row { grid-template-columns: 1fr 200px; }
+.host__block:nth-child(even) .host__row img { order: 2; }
+.host__row img { width: 200px; aspect-ratio: 3 / 4; object-fit: cover; object-position: top; background: var(--surface); }
+.host__row ul { display: grid; gap: 14px; line-height: 1.4; }
+
+/* ---------- faq: question index, one answer ---------- */
+.faq { padding-block: var(--section); }
+.faq__grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: var(--gutter); align-items: start; }
+.faq__list { grid-column: 1 / span 5; display: grid; gap: 18px; }
+.faq__list h2 { font-size: var(--step-body); font-weight: 400; color: var(--muted); }
+.q { display: flex; gap: 0.75em; align-items: baseline; text-align: left; line-height: 1.35; color: var(--muted); transition: color var(--t-hover) ease; }
+.q::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--muted); flex: none; transform: translateY(-2px); transition: background-color var(--t-hover) ease; }
+.q[aria-selected="true"] { color: var(--ink); }
+.q[aria-selected="true"]::before { background: var(--accent); }
+@media (hover: hover) and (pointer: fine) { .q:hover { color: var(--ink); } }
+.q__inline { display: none; }
+.faq__pane { grid-column: 7 / span 6; position: sticky; top: 120px; font-size: var(--step-lead); line-height: 1.3; max-width: 30ch; transition: opacity 150ms ease; }
+.faq__pane.is-swapping { opacity: 0; }
+
+/* ---------- contact: visit card on a photograph ---------- */
+.contact { position: relative; height: 100svh; min-height: 640px; overflow: hidden; background: #2a2a28; }
+.contact > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 30% 22%; }
+.card { position: absolute; top: 60px; right: 60px; width: 380px; background: var(--bg); padding: 32px; border-radius: 8px; display: grid; gap: 1.25rem; }
+.card h2 { font-size: var(--step-lead); font-weight: 300; line-height: 1.15; font-variation-settings: "wdth" 100; }
+.card__who { line-height: 1.45; }
+.card dl { display: grid; gap: 0.35rem; }
+.card dl div { display: flex; justify-content: space-between; gap: 1rem; }
+.card dd { font-variant-numeric: tabular-nums; text-align: right; }
+.card .button { width: 100%; min-height: 52px; margin-top: 0.5rem; border-radius: 0; }
+
+/* ---------- footer: photograph half, menu half ---------- */
+.foot { display: grid; grid-template-columns: repeat(12, 1fr); min-height: 100svh; background: var(--surface); }
+.foot__pic { grid-column: 1 / span 6; position: relative; overflow: hidden; background: #1d1c1b; }
+.foot__pic video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 55% 40%; filter: grayscale(1) contrast(1.05); }
+.foot__side { grid-column: 8 / span 5; padding: 80px var(--margin) var(--margin) 0; display: flex; flex-direction: column; }
+.foot__mark { font-weight: 600; }
+.foot__menu { margin-top: 2rem; display: grid; gap: 28px; }
+.foot__menu a { font-size: var(--step-title); font-weight: 800; font-variation-settings: "wdth" 30; text-transform: uppercase; line-height: 0.9; text-decoration: none; display: inline-block; transition: transform var(--t-ui) var(--ease-out), color var(--t-hover) ease; }
+@media (hover: hover) and (pointer: fine) {
+  .foot__menu:hover a { color: var(--muted); }
+  .foot__menu a:hover { color: var(--ink); transform: translateX(12px); }
+}
+.foot__info { margin-top: 64px; display: grid; grid-template-columns: 1fr 1fr; gap: var(--gutter); font-size: var(--step-small); }
+.foot__info p + p { margin-top: 0.25rem; }
+.foot__legal { margin-top: auto; padding-top: 3rem; font-size: var(--step-small); color: var(--muted); line-height: 1.45; }
+
+/* ---------- motion ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .js [data-reveal] { opacity: 0; transform: translateY(24px); transition: opacity 700ms var(--ease-out), transform 900ms var(--ease-out); transition-delay: var(--d, 0ms); }
+  .js [data-reveal].is-in { opacity: 1; transform: none; }
+  .js .hero__card { opacity: 0; transform: translateY(32px); animation: rise 1000ms var(--ease-expo) 150ms forwards; }
+  .js .hero__card > * { opacity: 0; animation: fade 700ms var(--ease-out) forwards; }
+  .js .hero__card > :nth-child(1) { animation-delay: 450ms; }
+  .js .hero__card > :nth-child(2) { animation-delay: 540ms; }
+  .js .hero__card > :nth-child(3) { animation-delay: 630ms; }
+  .js .hero__card > :nth-child(4) { animation-delay: 720ms; }
+  .hero__bg { animation: drift 24s var(--ease-soft) infinite alternate; }
+  .how__panel img { transform: scale(1.08); transition: transform 1600ms var(--ease-soft); }
+  .how__panel.is-in img { transform: scale(1); }
+  @keyframes rise { to { opacity: 1; transform: none; } }
+  @keyframes fade { to { opacity: 1; } }
+  @keyframes drift { from { transform: scale(1); } to { transform: scale(1.07) translateX(-1.5%); } }
+}
+
+/* ---------- tablet ---------- */
+@media (max-width: 1000px) {
+  .work { --frame: 46vw; }
+  .work__stage { top: calc(50svh - var(--frame) / 2 - 2rem); height: calc(var(--frame) + 4rem); margin-bottom: calc((var(--frame) + 4rem) * -1); grid-template-columns: 1fr 1fr; grid-template-rows: var(--frame) auto; align-items: start; justify-items: center; column-gap: 1rem; width: min(100%, calc(var(--frame) + 12rem)); margin-inline: auto; }
+  .work__frame { grid-column: 1 / -1; grid-row: 1; }
+  .work__fact { font-size: var(--step-small); max-width: none; margin: 0.75rem 0 0; }
+  .work__fact--l { grid-column: 1; grid-row: 2; justify-self: start; text-align: left; }
+  .work__fact--r { grid-column: 2; grid-row: 2; justify-self: end; text-align: right; }
+  .day__head h2 { grid-column: 1 / -1; }
+  .day__live { grid-column: 1 / -1; }
+  .price__names { grid-column: 1 / span 7; }
+  .price__stage { grid-column: 8 / -1; }
+  .host__title { grid-column: 1 / -1; position: static; margin-bottom: 4rem; }
+  .host__blocks { grid-column: 1 / -1; }
+  .faq__list { grid-column: 1 / span 6; }
+  .faq__pane { grid-column: 7 / -1; }
+}
+
+/* ---------- phone ---------- */
+@media (max-width: 700px) {
+  .hero { padding: 16px; }
+  .hero__card { min-height: 62svh; padding: 24px 20px; }
+  .hero__title { display: block; font-size: 6.6vw; font-variation-settings: "wdth" 25; }
+  .hero__title .nw { white-space: nowrap; }
+  .hero__title span:nth-child(2) { text-align: left; }
+  .hero__foot { grid-template-columns: 1fr; justify-items: start; }
+  .hero__foot .button { width: 100%; order: 3; }
+  .hero__more { justify-self: start; }
+
+  .work { --frame: 64vw; }
+  .work__name { padding-block: 0.32em; }
+  .work__stage { width: 100%; }
+
+  .day__head { display: block; }
+  .day__live { margin-top: 1.5rem; }
+  .sched, .sched tbody, .sched tr, .sched td, .sched th { display: block; width: auto !important; }
+  .sched thead { display: none; }
+  .sched tr:not(.part) { display: grid; grid-template-columns: auto 1fr auto; gap: 0 0.35em; margin-bottom: 18px; }
+  .sched tr:not(.part) td:nth-child(1) { grid-column: 1 / -1; line-height: 1.3; padding: 0; }
+  .sched tr:not(.part) td:nth-child(2) { grid-column: 1; grid-row: 2; font-size: var(--step-small); color: var(--dark-soft); padding: 0; }
+  .sched tr:not(.part) td:nth-child(2)::after { content: ","; }
+  .sched tr:not(.part) td:nth-child(3) { grid-column: 2; grid-row: 2; font-size: var(--step-small); color: var(--dark-soft); padding: 0; }
+  .sched tr:not(.part) td:nth-child(4) { grid-column: 3; grid-row: 2; font-size: var(--step-small); color: var(--dark-soft); }
+  .sched tr.is-next td:nth-child(n) { color: var(--field-1); }
+  .sched .part th { padding: 48px 0 16px; }
+
+  .price__grid { display: block; }
+  .price__stage { display: none; }
+  .plan__inline { padding: 0.75rem 0 5rem; }
+  .plan[aria-selected="true"] + .plan__inline { display: block; }
+  .plan__inline .button { width: 100%; margin-top: 1.5rem; }
+
+  .how__say { max-width: none; right: 0; padding: 1.25rem 16px 2rem; }
+
+  .host__row, .host__block:nth-child(even) .host__row { grid-template-columns: 1fr; }
+  .host__block:nth-child(even) .host__row img { order: 0; }
+  .host__row img { width: 100%; aspect-ratio: 4 / 3; }
+  .host__blocks { gap: 72px; }
+
+  .faq__grid { display: block; }
+  .faq__pane { display: none; }
+  .faq__list { gap: 14px; }
+  .q[aria-selected="true"] + .q__inline { display: block; padding: 0.25rem 0 0.75rem calc(8px + 0.75em); line-height: 1.4; }
+
+  .contact { height: auto; min-height: 0; background: var(--bg); padding-bottom: 16px; }
+  .contact > img { position: relative; height: 70svh; }
+  .card { position: relative; top: auto; right: auto; width: auto; margin: -80px 16px 0; }
+  .card .button { min-height: 56px; }
+
+  .foot { display: block; min-height: 0; }
+  .foot__pic { height: 50svh; }
+  .foot__side { padding: 48px 16px 24px; }
+  .foot__menu { gap: 20px; }
+  .foot__info { grid-template-columns: 1fr; gap: 1rem; margin-top: 48px; }
+}
+</style>
 </head>
 <body>
-<a class="skip" href="#main">К содержанию</a>
-<div class="page-bg" data-slot="page-bg" aria-hidden="true"></div>
-<header class="top" id="top">
-  <div class="top__in">
-    <a class="brand" href="#hero"><span class="brand__mark" aria-hidden="true">АЛ</span><span class="brand__text"><span class="brand__name">Артур Лето</span><span class="brand__role">боты и сайты</span></span></a>
-    <nav class="nav" aria-label="Разделы"><a class="nav__link" href="#bots">Боты</a><a class="nav__link" href="#sites">Сайты</a><a class="nav__link" href="#demos">Портфолио</a><a class="nav__link" href="#prices">Цены</a><a class="nav__link" href="#contact">Связь</a></nav>
-    <div class="switch" role="group" aria-labelledby="switch-label">
-      <span class="switch__label" id="switch-label">Выберите дизайн</span>
-      <div class="switch__btns"><button type="button" class="switch__btn" data-set-theme="neon" aria-pressed="false" title="Дизайн 1: Неон"><span class="switch__num">1</span><span class="switch__name">Неон</span></button><button type="button" class="switch__btn" data-set-theme="poster" aria-pressed="false" title="Дизайн 2: Плакат"><span class="switch__num">2</span><span class="switch__name">Плакат</span></button><button type="button" class="switch__btn" data-set-theme="bento" aria-pressed="false" title="Дизайн 3: Бенто"><span class="switch__num">3</span><span class="switch__name">Бенто</span></button><button type="button" class="switch__btn" data-set-theme="lux" aria-pressed="false" title="Дизайн 4: Люкс"><span class="switch__num">4</span><span class="switch__name">Люкс</span></button><button type="button" class="switch__btn" data-set-theme="chat" aria-pressed="false" title="Дизайн 5: Чат"><span class="switch__num">5</span><span class="switch__name">Чат</span></button></div>
+
+<header class="hero" id="top">
+  <img class="hero__bg" src="img/found/telegraph-operators-in-tokyo-central-telegraph-office.jpg" width="1165" height="802" alt="Операторы центрального телеграфа в Токио, 1963 год">
+  <div class="hero__card">
+    <h1 class="hero__title display"><span>Сайты</span> <span class="nw">и Telegram-боты</span> <span>под ключ</span></h1>
+    <p class="hero__facts display">Артур Лето, разработчик<br>От одной страницы до личного кабинета<br>Работаю удалённо с Бали</p>
+    <p class="hero__lead">Делаю сайты и ботов, которые приводят клиентов и работают без вас. Моя программа нашла одному клиенту за неделю 680 человек, которые искали его услугу.</p>
+    <div class="hero__foot">
+      <p class="hero__credit">18 моих проектов работают прямо сейчас</p>
+      <a class="button" href="https://t.me/arturleto">Обсудить проект</a>
+      <a class="hero__more link" href="#raboty">Смотреть работы</a>
     </div>
-    <a class="btn btn--primary top__cta" href="https://t.me/arturleto" target="_blank" rel="noopener">Написать</a>
   </div>
 </header>
-<main id="main">
-<section class="sec hero" id="hero" aria-labelledby="hero-title">
-  <div class="sec__art hero__art" data-slot="hero-art" aria-hidden="true"></div>
-  <div class="hero__in wrap">
-    <div class="hero__text">
-      <h1 class="hero__title" id="hero-title">Делаю Telegram-ботов и сайты</h1>
-      <p class="hero__lead">Боты, которые отвечают клиентам, записывают и принимают оплату. Сайты, с которых приходят заявки. Подключаю искусственный интеллект. От 3 000 ₽.</p>
-      <div class="hero__actions">
-        <a class="btn btn--primary btn--big" href="https://t.me/arturleto" target="_blank" rel="noopener">Обсудить проект в Telegram</a>
-        <a class="btn btn--ghost btn--big" href="#bots">Какие бывают боты</a>
-      </div>
+
+<main>
+
+<section class="work wrap" id="raboty" aria-labelledby="work-h">
+  <div class="work__stage" aria-hidden="true">
+    <p class="work__fact work__fact--l" id="work-kind">Сайт сообщества</p>
+    <div class="work__frame" id="work-frame">
+      <img class="is-on" src="img/work/vz_comm_sq.jpg" width="780" height="780" alt="">
+      <img src="img/work/vz_diag_sq.jpg" width="780" height="780" alt="" data-dark loading="lazy">
+      <img src="img/work/vz_blog_sq.jpg" width="780" height="780" alt="" loading="lazy">
+      <img src="img/work/finansist_sq.jpg" width="900" height="900" alt="" loading="lazy">
+      <img src="img/work/sovetnik_sq.jpg" width="900" height="900" alt="" loading="lazy">
+      <img src="img/work/parslead_sq.jpg" width="900" height="900" alt="" loading="lazy">
+      <img src="img/work/radar_sq.jpg" width="900" height="900" alt="" loading="lazy">
+      <img src="img/work/publikator_sq.jpg" width="900" height="900" alt="" loading="lazy">
+      <img src="img/work/ms_invest_sq.jpg" width="780" height="780" alt="" data-dark loading="lazy">
+      <img src="img/work/cmteam_sq.jpg" width="900" height="900" alt="" loading="lazy">
+      <img src="img/work/kit_sq.jpg" width="780" height="780" alt="" data-dark loading="lazy">
     </div>
-    <div class="hero__stage">
-      <div class="phone" data-chat="ai-consult" data-autoplay data-loop>
-        <div class="phone__frame">
-          <div class="tg" data-ui>
-            <div class="tg__head"><span class="tg__back" aria-hidden="true"></span><span class="tg__ava" aria-hidden="true"></span><span class="tg__who"><span class="tg__name"></span><span class="tg__status">бот</span></span></div>
-            <div class="tg__feed" role="log" aria-live="off"></div>
-            <div class="tg__bar" aria-hidden="true"><span class="tg__clip"></span><span class="tg__input">Сообщение</span><span class="tg__mic"></span></div>
-          </div>
+    <p class="work__fact work__fact--r" id="work-detail">Свой домен, оплата, аналитика</p>
+  </div>
+  <ol class="work__list">
+    <li><h2 class="display" id="work-h">Работы</h2></li>
+    <li><a class="work__name display" data-i="0" data-kind="Сайт сообщества" data-detail="Свой домен, оплата, аналитика" href="https://svezhiy-vzdoh.ru/community-svezhiy-vzdoh/" target="_blank" rel="noopener">Свежий Вздох</a></li>
+    <li><a class="work__name display" data-i="1" data-kind="Тест для курильщиков из 21 вопроса" data-detail="Подбирает программу и ведёт к оплате" href="https://arturleto.github.io/svezhy-vzdoh/" target="_blank" rel="noopener">Диагностика</a></li>
+    <li><a class="work__name display" data-i="2" data-kind="Блог, который находят в Яндексе" data-detail="Статьи про отказ от курения" href="https://svezhiy-vzdoh.ru/blog/" target="_blank" rel="noopener">Блог</a></li>
+    <li><a class="work__name display" data-i="3" data-kind="Бот учёта расходов" data-detail="Записывает с голоса и по фото чека" href="#sutki">Финансист</a></li>
+    <li><a class="work__name display" data-i="4" data-kind="Бот с гороскопом на день" data-detail="Расчёт по дате рождения, текст пишет ИИ" href="#sutki">Советник</a></li>
+    <li><a class="work__name display" data-i="5" data-kind="Поиск клиентов в чатах" data-detail="Платят 5 клиентов, работает с 2022 года" href="#sutki">Parslead</a></li>
+    <li><a class="work__name display" data-i="6" data-kind="Сводка новостей с ИИ" data-detail="Каналы, чат и форум, раз в 4 часа" href="#sutki">Радар</a></li>
+    <li><a class="work__name display" data-i="7" data-kind="Публикация видео в Instagram" data-detail="Сначала утверждение в Telegram" href="#sutki">Публикатор</a></li>
+    <li><a class="work__name display" data-i="8" data-kind="Сайт для инвесторов магазина на Бали" data-detail="Три языка и своя аналитика" href="https://arturleto.github.io/maison/invest/" target="_blank" rel="noopener">Maison</a></li>
+    <li><a class="work__name display" data-i="9" data-kind="Бот, который принимает партнёров" data-detail="8 шагов на трёх языках" href="#sutki">CM Team</a></li>
+    <li><a class="work__name display" data-i="10" data-kind="Сайт продукта для разработчиков" data-detail="Набор настроек для ИИ-помощника" href="https://arturleto.github.io/claude-kit/" target="_blank" rel="noopener">Claude Kit</a></li>
+  </ol>
+</section>
+
+<section class="day wrap" id="sutki" aria-labelledby="day-h">
+  <div class="day__head">
+    <h2 class="display" id="day-h" data-reveal>Сутки моих ботов</h2>
+    <p class="day__live" id="day-live" data-reveal style="--d:90ms">Это настоящее расписание моих ботов по московскому времени. Пока вы спите, они уже работают. Ваш бот тоже будет работать сам, без вас.</p>
+  </div>
+  <table class="sched" id="sched">
+    <thead class="sr"><tr><th>Что делает</th><th>Кто</th><th>Для кого</th><th>Когда, по Москве</th></tr></thead>
+    <tbody>
+      <tr class="part"><th colspan="4">Ночь и утро</th></tr>
+      <tr data-t="02:00"><td>Присылает гороскоп на день</td><td>Советник</td><td>Для меня</td><td>02:00</td></tr>
+      <tr data-t="04:00"><td>Публикует видео в Instagram</td><td>Публикатор</td><td>Для моего блога</td><td>04:00</td></tr>
+      <tr data-t="05:00"><td>Проверяет, что поиск клиентов работает</td><td>Parslead</td><td>Для 5 клиентов</td><td>05:00</td></tr>
+      <tr data-t="06:00"><td>Сохраняет копию базы расходов</td><td>Финансист</td><td>Для меня</td><td>06:00</td></tr>
+    </tbody>
+    <tbody>
+      <tr class="part"><th colspan="4">День</th></tr>
+      <tr data-t="13:00"><td>Ещё раз проверяет поиск клиентов</td><td>Parslead</td><td>Для 5 клиентов</td><td>13:00</td></tr>
+      <tr data-t="14:00"><td>Публикует второе видео</td><td>Публикатор</td><td>Для моего блога</td><td>14:00</td></tr>
+      <tr data-t="15:00"><td>Присылает итог дня на телефон</td><td>Трекер дня</td><td>Для меня</td><td>15:00</td></tr>
+      <tr data-t="16:00"><td>Пишет итог дня в рабочий чат</td><td>Maison</td><td>Для магазина</td><td>16:00</td></tr>
+    </tbody>
+    <tbody>
+      <tr class="part"><th colspan="4">Вечер</th></tr>
+      <tr data-t="23:00"><td>Продлевает доступ, чтобы публикации не прерывались</td><td>Публикатор</td><td>Для моего блога</td><td>23:00</td></tr>
+    </tbody>
+    <tbody>
+      <tr class="part"><th colspan="4">Круглосуточно</th></tr>
+      <tr><td>Ищет в 366 чатах людей, которым нужна услуга</td><td>Parslead</td><td>Для 5 клиентов</td><td>Всегда</td></tr>
+      <tr><td>Перезапускает поиск, если он завис</td><td>Parslead</td><td>Для 5 клиентов</td><td>Каждые 15 минут</td></tr>
+      <tr><td>Сохраняет рабочий чат магазина в архив</td><td>Maison</td><td>Для магазина</td><td>Каждую минуту</td></tr>
+      <tr><td>Собирает сводку новостей</td><td>Радар</td><td>Для меня</td><td>Каждые 4 часа</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="price wrap" id="ceny" aria-labelledby="price-h">
+  <div class="price__grid">
+    <div class="price__names" role="tablist" aria-labelledby="price-h">
+      <h2 id="price-h" data-reveal>Цены и сроки</h2>
+      <noscript><ul class="plain"><li><strong>Лендинг</strong>. от 40 000 ₽, 7-12 рабочих дней. Одна страница, которая продаёт одну услугу. Дизайн под ваш бренд, текст по структуре продаж, заявки в Telegram или CRM, Яндекс Метрика, которая считает заявки.</li><li><strong>Сайт компании</strong>. от 80 000 ₽, 15-25 рабочих дней. От 5 до 15 страниц. Услуги, кейсы, цены, контакты и формы заявок. Тексты можно править самим, без программиста.</li><li><strong>Блог</strong>. от 60 000 ₽, 10-20 рабочих дней. Блог со статьями, которые находят в Яндексе. Рубрики, поиск по сайту, быстрые страницы и настройка под поисковики.</li><li><strong>Магазин</strong>. от 120 000 ₽, 20-35 рабочих дней. Каталог, корзина, оплата картой и по СБП, заказы приходят вам в Telegram, у покупателя есть личный кабинет.</li><li><strong>Веб-сервис</strong>. от 150 000 ₽, 30-60 рабочих дней. Личный кабинет, база данных, панель управления, разные права для сотрудников и связка с другими сервисами. Для сервисов, где у каждого клиента свой аккаунт.</li><li><strong>Telegram-бот</strong>. от 30 000 ₽, 5-10 рабочих дней. Меню, кнопки, приём заявок, ответы на частые вопросы и рассылки. Заявки сразу приходят вам в Telegram.</li><li><strong>Бот с оплатой</strong>. от 70 000 ₽, 12-25 рабочих дней. Оплата и подписки, доступ в закрытый канал, напоминания о продлении, панель управления со статистикой.</li><li><strong>Бот с ИИ</strong>. от 60 000 ₽, 10-25 рабочих дней. Понимает голосовые, читает фото и чеки, отвечает клиентам по вашим материалам. Подключаю ChatGPT, Claude или Gemini.</li><li><strong>Приложение в Telegram</strong>. от 100 000 ₽, 15-30 рабочих дней. Приложение внутри Telegram. Каталог, запись, личный кабинет и оплата. Клиенту не нужно ничего скачивать.</li><li><strong>Парсер</strong>. от 25 000 ₽, 5-10 рабочих дней. Следит за чатами, каналами и сайтами по ключевым словам. Находит людей, которым нужна ваша услуга, и присылает их вам. Нейросеть убирает рекламу и лишние сообщения.</li><li><strong>Автоматизация</strong>. от 20 000 ₽, 3-10 рабочих дней. Связываю сервисы между собой. CRM, Google Таблицы, рассылки, автопубликация в соцсети. Цена за одну связку, например сайт и Google Таблица.</li><li><strong>Поддержка</strong>. от 10 000 ₽, в месяц. Слежу, чтобы всё работало, обновляю, делаю копии базы и вношу мелкие правки. Новые функции сверх этого стоят 2 500 ₽ в час.</li></ul></noscript>
+    </div>
+    <div class="price__stage" id="price-stage" aria-live="polite">
+      <p class="price__fig display" id="pf">от 30 000 ₽</p>
+      <p class="price__term" id="pt">5-10 рабочих дней</p>
+      <p class="price__text" id="px">Меню, кнопки, приём заявок, ответы на частые вопросы и рассылки. Заявки сразу приходят вам в Telegram.</p>
+      <a class="button" id="pb" href="https://t.me/arturleto">Обсудить бота</a>
+    </div>
+  </div>
+  <p class="price__note" data-reveal>Это минимальные цены. Точную сумму назову после разговора и закреплю в договоре вместе со сроком. Срок считаю с того дня, как вы утвердили задание.</p>
+</section>
+
+<section class="how" id="kak" aria-label="Как я работаю">
+  <article class="how__panel">
+    <img src="img/found/female-indian-telephone-switchboard-operator-helen-of.jpg" width="1920" height="1372" alt="Телефонистка гостиницы Many Glacier за коммутатором, 1925 год" loading="lazy">
+    <h2 class="how__verb display">Обсудим</h2>
+    <p class="how__say" data-reveal>Разберём задачу в Telegram или на созвоне. Я составлю короткое задание, а цену и срок закреплю в договоре.</p>
+  </article>
+  <article class="how__panel">
+    <img src="img/found/african-american-woman-teletype-operator.jpg" width="1920" height="2300" alt="Оператор телетайпа за работой, 1940-е" loading="lazy">
+    <h2 class="how__verb display">Соберу</h2>
+    <p class="how__say" data-reveal>Работаю этапами и присылаю ссылку, по которой результат видите только вы. На каждом этапе есть два круга правок.</p>
+  </article>
+  <article class="how__panel">
+    <img src="img/found/wisconsin-bell-telephone-company-switchboard.jpg" width="1920" height="1118" alt="Мужчина за телефонным коммутатором компании Wisconsin Bell, 1930 год" loading="lazy">
+    <h2 class="how__verb display">Запущу</h2>
+    <p class="how__say" data-reveal>Размещаю проект в интернете, подключаю адрес, приём оплаты и счётчик посетителей. Всё регистрирую на ваше имя.</p>
+  </article>
+  <article class="how__panel">
+    <img src="img/found/telegraph-operators-in-tokyo-central-telegraph-office.jpg" width="1165" height="802" alt="Зал центрального телеграфа в Токио, 1963 год" loading="lazy">
+    <h2 class="how__verb display">Поддержу</h2>
+    <p class="how__say" data-reveal>60 дней бесплатно исправляю ошибки. Передаю код, доступы и понятную инструкцию.</p>
+  </article>
+</section>
+
+<section class="host wrap" id="hosting" aria-labelledby="host-h">
+  <div class="host__grid">
+    <div class="host__title">
+      <h2 class="display" id="host-h">Где будет жить проект</h2>
+      <p>Сайту и боту нужен свой дом в интернете. Объясняю, какой нужен вам и сколько он стоит в месяц.</p>
+    </div>
+    <div class="host__blocks">
+      <article class="host__block">
+        <h3>Лендинг и сайт</h3>
+        <div class="host__row">
+          <img src="img/work/vz_comm_34.jpg" width="780" height="1040" alt="Сайт сообщества Свежий Вздох на телефоне" loading="lazy">
+          <ul>
+            <li>Обычный хостинг от 420 ₽ в месяц</li>
+            <li>Защищённое соединение бесплатно</li>
+            <li>Подходит для лендинга и сайта-визитки</li>
+          </ul>
         </div>
-      </div>
-    </div>
-    <ul class="hero__facts"><li class="fact"><span class="fact__num">от 3 000 ₽</span><span class="fact__text">стоит простой бот</span></li><li class="fact"><span class="fact__num">18</span><span class="fact__text">моих ботов и сайтов работают прямо сейчас</span></li><li class="fact"><span class="fact__num">680</span><span class="fact__text">человек, которым нужна услуга, нашёл мой бот одному клиенту за неделю</span></li></ul>
-  </div>
-</section>
-<section class="sec bots" id="bots" aria-labelledby="bots-title">
-  <div class="sec__art" data-slot="bots-art" aria-hidden="true"></div>
-  <div class="wrap">
-    <header class="sec__head"><h2 class="sec__title" id="bots-title">Какие бывают Telegram-боты</h2><p class="sec__lead">Найдите свою задачу. Нажмите на бота, и он покажет, как разговаривает с клиентом.</p></header>
-    <div class="filters" role="group" aria-label="Показать ботов"><button type="button" class="filter is-on" data-filter="all" aria-pressed="true">Все</button><button type="button" class="filter" data-filter="ai" aria-pressed="false">С ИИ</button><button type="button" class="filter" data-filter="sales" aria-pressed="false">Продажи и оплата</button><button type="button" class="filter" data-filter="leads" aria-pressed="false">Запись и заявки</button><button type="button" class="filter" data-filter="biz" aria-pressed="false">Для бизнеса</button><button type="button" class="filter" data-filter="content" aria-pressed="false">Контент</button></div>
-    <div class="bots__body">
-      <ul class="bots__list"><li class="bot is-on" data-bot="vizitka" data-tags="sales leads" data-price="3000"><button type="button" class="bot__btn" aria-pressed="true" aria-controls="bots-phone"><span class="bot__name">Бот-визитка</span><span class="bot__who">Кафе, мастер, эксперт, магазин</span><span class="bot__price">от 3 000 ₽</span></button><ul class="bot__does"><li>Меню из кнопок: услуги, цены, адрес, часы работы</li><li>Отвечает на частые вопросы</li><li>Кнопка «позвать человека», если нужен живой ответ</li></ul></li><li class="bot" data-bot="zapis" data-tags="leads" data-price="12000"><button type="button" class="bot__btn" aria-pressed="false" aria-controls="bots-phone"><span class="bot__name">Бот записи</span><span class="bot__who">Салоны, барберы, врачи, репетиторы, тренеры</span><span class="bot__price">от 12 000 ₽</span></button><ul class="bot__does"><li>Клиент сам выбирает услугу, мастера, день и время</li><li>Напоминает о визите за сутки и за 2 часа</li><li>Перенос и отмена в одно нажатие, записи приходят вам</li></ul></li><li class="bot" data-bot="kviz" data-tags="leads sales" data-price="7000"><button type="button" class="bot__btn" aria-pressed="false" aria-controls="bots-phone"><span class="bot__name">Бот заявок и квиз</span><span class="bot__who">Ремонт, недвижимость, услуги, школы</span><span class="bot__price">от 7 000 ₽</span></button><ul class="bot__does"><li>Задаёт 3-5 вопросов и считает примерную цену</li><li>Берёт номер телефона</li><li>Заявка сразу приходит вам в Telegram или в CRM</li></ul></li><li class="bot" data-bot="shop" data-tags="sales" data-price="20000"><button type="button" class="bot__btn" aria-pressed="false" aria-controls="bots-phone"><span class="bot__name">Бот-магазин с оплатой</span><span class="bot__who">Товары, курсы, консультации, билеты</span><span class="bot__price">от 20 000 ₽</span></button><ul class="bot__does"><li>Каталог, корзина и оплата прямо в чате</li><li>Карта, СБП или звёзды Telegram</li><li>Сам выдаёт товар, доступ или чек</li></ul></li><li class="bot" data-bot="club" data-tags="sales" data-price="15000"><button type="button" class="bot__btn" aria-pressed="false" aria-controls="bots-phone"><span class="bot__name">Платный доступ в канал</span><span class="bot__who">Блогеры, эксперты, закрытые клубы</span><span class="bot__price">от 15 000 ₽</span></button><ul class="bot__does"><li>Продаёт подписку на канал или чат</li><li>Напоминает о продлении и продлевает сам</li><li>Убирает из канала тех, кто не оплатил</li></ul></li><li class="bot bot--ai" data-bot="ai-consult" data-tags="ai sales leads" data-price="25000"><button type="button" class="bot__btn" aria-pressed="false" aria-controls="bots-phone"><span class="bot__name">ИИ-консультант</span><span class="bot__who">Любой бизнес, где много одинаковых вопросов</span><span class="bot__price">от 25 000 ₽</span></button><ul class="bot__does"><li>Отвечает клиентам круглосуточно, как живой менеджер</li><li>Знает только ваши цены, условия и наличие</li><li>Понимает голосовые, сложный вопрос передаёт вам</li></ul></li><li class="bot bot--ai" data-bot="ai-method" data-tags="ai" data-price="30000"><button type="button" class="bot__btn" aria-pressed="false" aria-controls="bots-phone"><span class="bot__name">ИИ-помощник по вашей методике</span><span class="bot__who">Коучи, психологи, нутрициологи, астрологи</span><span class="bot__price">от 30 000 ₽</span></button><ul class="bot__does"><li>Ведёт человека по вашей программе</li><li>Разбирает его ситуацию и даёт задания</li><li>Помнит прошлые разговоры</li></ul></li><li class="bot bot--ai" data-bot="ai-content" data-tags="ai content" data-price="15000"><button type="button" class="bot__btn" aria-pressed="false" aria-controls="bots-phone"><span class="bot__name">ИИ для контента</span><span class="bot__who">Блогеры, SMM, маркетологи</span><span class="bot__price">от 15 000 ₽</span></button><ul class="bot__does"><li>Из голосового делает пост или сценарий рилса</li><li>Расшифровывает видео и созвоны</li><li>Рисует обложки и переводит тексты</li></ul></li><li class="bot" data-bot="funnel" data-tags="sales content" data-price="15000"><button type="button" class="bot__btn" aria-pressed="false" aria-controls="bots-phone"><span class="bot__name">Автоворонка и рассылки</span><span class="bot__who">Онлайн-школы, запуски, эксперты</span><span class="bot__price">от 15 000 ₽</span></button><ul class="bot__does"><li>Дарит подарок за подписку</li><li>Отправляет цепочку сообщений по дням</li><li>Делает рассылки по базе с метками</li></ul></li><li class="bot bot--ai" data-bot="parser" data-tags="ai leads biz" data-price="20000"><button type="button" class="bot__btn" aria-pressed="false" aria-controls="bots-phone"><span class="bot__name">Поиск клиентов в чатах</span><span class="bot__who">Услуги, туризм, недвижимость, визы</span><span class="bot__price">от 20 000 ₽</span></button><ul class="bot__does"><li>Читает сотни чатов по вашим словам</li><li>Находит людей, которые ищут вашу услугу</li><li>Нейросеть отсеивает рекламу и спам</li></ul></li><li class="bot bot--ai" data-bot="team" data-tags="ai biz" data-price="15000"><button type="button" class="bot__btn" aria-pressed="false" aria-controls="bots-phone"><span class="bot__name">Бот для учёта и команды</span><span class="bot__who">Владельцы бизнеса и руководители</span><span class="bot__price">от 15 000 ₽</span></button><ul class="bot__does"><li>Записывает расходы с голоса и по фото чека</li><li>Присылает отчёты и итог дня из рабочего чата</li><li>Уведомления о заявках с сайта и из CRM</li></ul></li><li class="bot" data-bot="autopost" data-tags="content biz" data-price="10000"><button type="button" class="bot__btn" aria-pressed="false" aria-controls="bots-phone"><span class="bot__name">Автопостинг</span><span class="bot__who">Каналы, блоги, Instagram</span><span class="bot__price">от 10 000 ₽</span></button><ul class="bot__does"><li>Публикует посты и видео по расписанию</li><li>Сначала присылает вам на утверждение</li><li>Проверяет, что публикация вышла</li></ul></li><li class="bot" data-bot="miniapp" data-tags="sales biz" data-price="50000"><button type="button" class="bot__btn" aria-pressed="false" aria-controls="bots-phone"><span class="bot__name">Mini App: приложение в Telegram</span><span class="bot__who">Магазины, сервисы, бронирование</span><span class="bot__price">от 50 000 ₽</span></button><ul class="bot__does"><li>Полноценное приложение прямо внутри Telegram</li><li>Каталог, личный кабинет, корзина и оплата</li><li>Клиенту ничего не нужно скачивать</li></ul></li></ul>
-      <div class="bots__demo" id="bots-demo">
-        <div class="phone" id="bots-phone" data-chat="vizitka">
-        <div class="phone__frame">
-          <div class="tg" data-ui>
-            <div class="tg__head"><span class="tg__back" aria-hidden="true"></span><span class="tg__ava" aria-hidden="true"></span><span class="tg__who"><span class="tg__name"></span><span class="tg__status">бот</span></span></div>
-            <div class="tg__feed" role="log" aria-live="off"></div>
-            <div class="tg__bar" aria-hidden="true"><span class="tg__clip"></span><span class="tg__input">Сообщение</span><span class="tg__mic"></span></div>
-          </div>
+      </article>
+      <article class="host__block">
+        <h3>Блог, магазин, сервис</h3>
+        <div class="host__row">
+          <img src="img/work/vz_blog_34.jpg" width="780" height="1040" alt="Блог Свежего Вздоха на телефоне" loading="lazy">
+          <ul>
+            <li>Хостинг с базой данных от 590 ₽ в месяц</li>
+            <li>В базе хранятся статьи, товары и заказы</li>
+            <li>Блог Свежего Вздоха работает на отдельном сервере</li>
+          </ul>
         </div>
-      </div>
-        <div class="bots__actions">
-          <button type="button" class="btn btn--ghost bots__replay">Показать ещё раз</button>
-          <a class="btn btn--primary bots__want" href="https://t.me/arturleto?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B1%D0%BE%D1%82%D0%B0%3A%20%D0%91%D0%BE%D1%82-%D0%B2%D0%B8%D0%B7%D0%B8%D1%82%D0%BA%D0%B0" target="_blank" rel="noopener">Хочу такого бота</a>
+      </article>
+      <article class="host__block">
+        <h3>Telegram-бот</h3>
+        <div class="host__row">
+          <img src="img/work/finansist_34.jpg" width="810" height="1080" alt="Бот-финансист записывает расход по голосовому сообщению" loading="lazy">
+          <ul>
+            <li>Бот работает круглосуточно, ему нужен сервер</li>
+            <li>Сервер в России от 330 ₽ в месяц</li>
+            <li>Один недорогой сервер держит больше десяти ботов</li>
+          </ul>
         </div>
-      </div>
-    </div>
-    <div class="ai">
-      <h3 class="ai__title">Что умеет искусственный интеллект в боте</h3>
-      <ul class="ai__list"><li class="ai__item"><span class="ai__name">Понимает голосовые</span><span class="ai__text">Клиент наговорил, бот понял и ответил текстом</span></li><li class="ai__item"><span class="ai__name">Отвечает по вашим материалам</span><span class="ai__text">Цены, условия, наличие берёт только из ваших данных</span></li><li class="ai__item"><span class="ai__name">Читает фото и документы</span><span class="ai__text">Чеки, скриншоты, договоры, анализы</span></li><li class="ai__item"><span class="ai__name">Помнит разговор</span><span class="ai__text">Знает, о чём клиент спрашивал вчера</span></li><li class="ai__item"><span class="ai__name">Пишет тексты</span><span class="ai__text">Посты, ответы и описания товаров в вашем стиле</span></li><li class="ai__item"><span class="ai__name">Рисует картинки</span><span class="ai__text">Обложки, иллюстрации, карточки товаров</span></li><li class="ai__item"><span class="ai__name">Переводит</span><span class="ai__text">Говорит с клиентом на его языке</span></li><li class="ai__item"><span class="ai__name">Зовёт человека</span><span class="ai__text">Сложный вопрос передаёт вам в личку</span></li></ul>
-      <p class="ai__models">Подключаю ChatGPT, Claude, Gemini, DeepSeek и другие нейросети. Подберу ту, что дешевле для вашей задачи.</p>
-    </div>
-  </div>
-</section>
-<section class="sec sites" id="sites" aria-labelledby="sites-title">
-  <div class="sec__art" data-slot="sites-art" aria-hidden="true"></div>
-  <div class="wrap">
-    <header class="sec__head"><h2 class="sec__title" id="sites-title">Какие бывают сайты</h2><p class="sec__lead">От страницы-визитки до онлайн-школы с личным кабинетом. Нажмите на пример, чтобы открыть его.</p></header>
-    <ul class="sites__list"><li class="site" data-site="vizitka" data-price="5000"><span class="site__art" aria-hidden="true"></span><h3 class="site__name">Сайт-визитка</h3><p class="site__who">Мастер, эксперт, небольшой бизнес</p><p class="site__does">Одна страница: кто вы, услуги и цены, контакты и кнопка записи.</p><p class="site__price">от 5 000 ₽</p><a class="site__example" href="demos/kofe/" target="_blank" rel="noopener">Пример: кофейня «Зерно»</a></li><li class="site" data-site="landing" data-price="15000"><span class="site__art" aria-hidden="true"></span><h3 class="site__name">Лендинг</h3><p class="site__who">Курс, услуга, мероприятие, товар</p><p class="site__does">Продающая страница под одно предложение: выгоды, цены, ответы на вопросы и форма заявки.</p><p class="site__price">от 15 000 ₽</p><a class="site__example" href="demos/villa/" target="_blank" rel="noopener">Пример: виллы на Бали</a></li><li class="site" data-site="quiz" data-price="15000"><span class="site__art" aria-hidden="true"></span><h3 class="site__name">Сайт-тест или калькулятор</h3><p class="site__who">Психологи, школы, услуги</p><p class="site__does">Человек отвечает на вопросы и получает результат. Вы получаете его контакт.</p><p class="site__price">от 15 000 ₽</p><a class="site__example site__example--real" href="https://arturleto.github.io/svezhy-vzdoh/" target="_blank" rel="noopener">Мой тест из 21 вопроса</a></li><li class="site" data-site="blog" data-price="25000"><span class="site__art" aria-hidden="true"></span><h3 class="site__name">Блог для поисковиков</h3><p class="site__who">Эксперты и ниши, где ищут в Яндексе</p><p class="site__does">Статьи, которые находят в поиске. Темы подбираю по реальным запросам людей.</p><p class="site__price">от 25 000 ₽</p><a class="site__example site__example--real" href="https://svezhiy-vzdoh.ru/blog/" target="_blank" rel="noopener">Мой блог «Свежий Вздох»</a></li><li class="site" data-site="invest" data-price="25000"><span class="site__art" aria-hidden="true"></span><h3 class="site__name">Сайт для инвесторов</h3><p class="site__who">Бизнес, который ищет деньги</p><p class="site__does">Цифры, план и презентация на нескольких языках. Видно, кто и сколько читал.</p><p class="site__price">от 25 000 ₽</p><a class="site__example site__example--real" href="https://arturleto.github.io/maison/invest/" target="_blank" rel="noopener">Мой сайт для MAISON SAUVAGE</a></li><li class="site" data-site="ai-site" data-price="30000"><span class="site__art" aria-hidden="true"></span><h3 class="site__name">Сайт с ИИ внутри</h3><p class="site__who">Магазины, сервисы, консультации</p><p class="site__does">ИИ-консультант прямо на сайте отвечает посетителям и подбирает товар.</p><p class="site__price">от 30 000 ₽</p></li><li class="site" data-site="company" data-price="35000"><span class="site__art" aria-hidden="true"></span><h3 class="site__name">Сайт компании или студии</h3><p class="site__who">Услуги, клубы, салоны, производство</p><p class="site__does">Несколько страниц: услуги, команда, цены, расписание, онлайн-запись.</p><p class="site__price">от 35 000 ₽</p><a class="site__example" href="demos/beauty/" target="_blank" rel="noopener">Пример: студия «Пион»</a></li><li class="site" data-site="shop" data-price="50000"><span class="site__art" aria-hidden="true"></span><h3 class="site__name">Интернет-магазин</h3><p class="site__who">Одежда, косметика, еда, товары</p><p class="site__does">Каталог с фильтрами, корзина, оплата. Заказы приходят вам в Telegram.</p><p class="site__price">от 50 000 ₽</p></li><li class="site" data-site="school" data-price="70000"><span class="site__art" aria-hidden="true"></span><h3 class="site__name">Онлайн-школа</h3><p class="site__who">Курсы и обучение</p><p class="site__does">Уроки, доступ после оплаты, домашние задания и прогресс ученика.</p><p class="site__price">от 70 000 ₽</p><a class="site__example" href="demos/school/" target="_blank" rel="noopener">Пример: школа «Говорим»</a></li><li class="site" data-site="service" data-price="0"><span class="site__art" aria-hidden="true"></span><h3 class="site__name">Веб-сервис</h3><p class="site__who">Ваша идея продукта</p><p class="site__does">Личные кабинеты, база данных, подписки и панель управления.</p><p class="site__price">по задаче</p></li></ul>
-    <div class="sites__base"><h3 class="sites__base-title">Есть в каждом сайте</h3><ul class="sites__base-list"><li>Удобно на телефоне</li><li>Быстро открывается</li><li>Заявки приходят вам в Telegram</li><li>Счётчик посетителей Яндекс Метрика</li><li>Подключу ваш домен</li><li>Настрою для поисковиков</li></ul></div>
-  </div>
-</section>
-<section class="sec demos" id="demos" aria-labelledby="demos-title">
-  <div class="sec__art" data-slot="demos-art" aria-hidden="true"></div>
-  <div class="wrap">
-    <header class="sec__head"><h2 class="sec__title" id="demos-title">Пять сайтов в пяти стилях</h2><p class="sec__lead">Я сделал их, чтобы вы увидели разброс: от уютной кофейни до боксёрского клуба. Все живые, откройте любой.</p></header>
-    <ul class="demos__list"><li class="demo" data-demo="kofe"><a class="demo__shots" href="demos/kofe/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img class="demo__shot demo__shot--d" src="img/demos/kofe-d.jpg" width="1440" height="900" alt="" loading="lazy"><img class="demo__shot demo__shot--m" src="img/demos/kofe-m.jpg" width="390" height="844" alt="" loading="lazy"></a><h3 class="demo__name">Кофейня «Зерно»</h3><p class="demo__style">Тёплый журнальный стиль</p><p class="demo__what">Меню с ценами, бронь стола, адрес на карте</p><a class="demo__open" href="demos/kofe/" target="_blank" rel="noopener">Открыть сайт<span class="vh">: Кофейня «Зерно»</span></a></li><li class="demo" data-demo="villa"><a class="demo__shots" href="demos/villa/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img class="demo__shot demo__shot--d" src="img/demos/villa-d.jpg" width="1440" height="900" alt="" loading="lazy"><img class="demo__shot demo__shot--m" src="img/demos/villa-m.jpg" width="390" height="844" alt="" loading="lazy"></a><h3 class="demo__name">Виллы «Samudra» на Бали</h3><p class="demo__style">Кино на весь экран</p><p class="demo__what">Подбор виллы по датам, галерея, бронь</p><a class="demo__open" href="demos/villa/" target="_blank" rel="noopener">Открыть сайт<span class="vh">: Виллы «Samudra» на Бали</span></a></li><li class="demo" data-demo="beauty"><a class="demo__shots" href="demos/beauty/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img class="demo__shot demo__shot--d" src="img/demos/beauty-d.jpg" width="1440" height="900" alt="" loading="lazy"><img class="demo__shot demo__shot--m" src="img/demos/beauty-m.jpg" width="390" height="844" alt="" loading="lazy"></a><h3 class="demo__name">Студия красоты «Пион»</h3><p class="demo__style">Нежный и чистый</p><p class="demo__what">Онлайн-запись к мастеру, прайс, работы</p><a class="demo__open" href="demos/beauty/" target="_blank" rel="noopener">Открыть сайт<span class="vh">: Студия красоты «Пион»</span></a></li><li class="demo" data-demo="school"><a class="demo__shots" href="demos/school/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img class="demo__shot demo__shot--d" src="img/demos/school-d.jpg" width="1440" height="900" alt="" loading="lazy"><img class="demo__shot demo__shot--m" src="img/demos/school-m.jpg" width="390" height="844" alt="" loading="lazy"></a><h3 class="demo__name">Школа английского «Говорим»</h3><p class="demo__style">Яркий и игровой</p><p class="demo__what">Тест уровня, программа, тарифы</p><a class="demo__open" href="demos/school/" target="_blank" rel="noopener">Открыть сайт<span class="vh">: Школа английского «Говорим»</span></a></li><li class="demo" data-demo="boxing"><a class="demo__shots" href="demos/boxing/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img class="demo__shot demo__shot--d" src="img/demos/boxing-d.jpg" width="1440" height="900" alt="" loading="lazy"><img class="demo__shot demo__shot--m" src="img/demos/boxing-m.jpg" width="390" height="844" alt="" loading="lazy"></a><h3 class="demo__name">Боксёрский клуб «Удар»</h3><p class="demo__style">Жёсткий и громкий</p><p class="demo__what">Расписание, тренеры, пробная тренировка</p><a class="demo__open" href="demos/boxing/" target="_blank" rel="noopener">Открыть сайт<span class="vh">: Боксёрский клуб «Удар»</span></a></li></ul>
-  </div>
-</section>
-<section class="sec work" id="work" aria-labelledby="work-title">
-  <div class="sec__art" data-slot="work-art" aria-hidden="true"></div>
-  <div class="wrap">
-    <header class="sec__head"><h2 class="sec__title" id="work-title">Мои проекты, которые работают каждый день</h2><p class="sec__lead">Это не макеты. Этими ботами и сайтами люди пользуются прямо сейчас.</p></header>
-    <ul class="work__list"><li class="case" data-case="parslead"><figure class="case__pic"><img src="img/work/parslead_34.jpg" width="780" height="1040" alt="PARSLEAD: поиск клиентов в чатах" loading="lazy"></figure><h3 class="case__name">PARSLEAD</h3><p class="case__kind">Поиск клиентов в чатах</p><p class="case__text">Читает 366 чатов и находит людей, которым нужна услуга. Платят 5 клиентов, работает с 2022 года.</p></li><li class="case" data-case="vz_comm"><figure class="case__pic"><img src="img/work/vz_comm_34.jpg" width="780" height="1040" alt="Свежий Вздох: сайт сообщества" loading="lazy"></figure><h3 class="case__name">Свежий Вздох</h3><p class="case__kind">Сайт сообщества</p><p class="case__text">Свой домен, оплата и аналитика.</p><a class="case__link" href="https://svezhiy-vzdoh.ru/community-svezhiy-vzdoh/" target="_blank" rel="noopener">Открыть<span class="vh">: Свежий Вздох</span></a></li><li class="case" data-case="vz_diag"><figure class="case__pic"><img src="img/work/vz_diag_34.jpg" width="780" height="1040" alt="Диагностика: тест из 21 вопроса" loading="lazy"></figure><h3 class="case__name">Диагностика</h3><p class="case__kind">Тест из 21 вопроса</p><p class="case__text">Подбирает программу и ведёт к оплате.</p><a class="case__link" href="https://arturleto.github.io/svezhy-vzdoh/" target="_blank" rel="noopener">Открыть<span class="vh">: Диагностика</span></a></li><li class="case" data-case="sovetnik"><figure class="case__pic"><img src="img/work/sovetnik_34.jpg" width="780" height="1040" alt="Советник по звёздам: бот с ии" loading="lazy"></figure><h3 class="case__name">Советник по звёздам</h3><p class="case__kind">Бот с ИИ</p><p class="case__text">Считает по дате рождения, текст пишет нейросеть. Прогноз приходит каждое утро.</p></li><li class="case" data-case="finansist"><figure class="case__pic"><img src="img/work/finansist_34.jpg" width="780" height="1040" alt="Финансист: бот учёта расходов" loading="lazy"></figure><h3 class="case__name">Финансист</h3><p class="case__kind">Бот учёта расходов</p><p class="case__text">Записывает расходы с голоса и по фото чека.</p></li><li class="case" data-case="ms_invest"><figure class="case__pic"><img src="img/work/ms_invest_34.jpg" width="780" height="1040" alt="MAISON SAUVAGE: сайт для инвесторов магазина на бали" loading="lazy"></figure><h3 class="case__name">MAISON SAUVAGE</h3><p class="case__kind">Сайт для инвесторов магазина на Бали</p><p class="case__text">Три языка и своя аналитика.</p><a class="case__link" href="https://arturleto.github.io/maison/invest/" target="_blank" rel="noopener">Открыть<span class="vh">: MAISON SAUVAGE</span></a></li><li class="case" data-case="publikator"><figure class="case__pic"><img src="img/work/publikator_34.jpg" width="780" height="1040" alt="Публикатор: публикация видео в instagram" loading="lazy"></figure><h3 class="case__name">Публикатор</h3><p class="case__kind">Публикация видео в Instagram</p><p class="case__text">Сначала присылает видео на утверждение в Telegram, потом публикует.</p></li><li class="case" data-case="vz_blog"><figure class="case__pic"><img src="img/work/vz_blog_34.jpg" width="780" height="1040" alt="Блог Свежего Вздоха: блог, который находят в яндексе" loading="lazy"></figure><h3 class="case__name">Блог Свежего Вздоха</h3><p class="case__kind">Блог, который находят в Яндексе</p><p class="case__text">Статьи про отказ от курения.</p><a class="case__link" href="https://svezhiy-vzdoh.ru/blog/" target="_blank" rel="noopener">Открыть<span class="vh">: Блог Свежего Вздоха</span></a></li><li class="case" data-case="radar"><figure class="case__pic"><img src="img/work/radar_34.jpg" width="780" height="1040" alt="Радар: сводка новостей с ии" loading="lazy"></figure><h3 class="case__name">Радар</h3><p class="case__kind">Сводка новостей с ИИ</p><p class="case__text">Каналы, чат и форум. Сводка раз в 4 часа.</p></li><li class="case" data-case="cmteam"><figure class="case__pic"><img src="img/work/cmteam_34.jpg" width="780" height="1040" alt="CM Team: бот, который принимает партнёров" loading="lazy"></figure><h3 class="case__name">CM Team</h3><p class="case__kind">Бот, который принимает партнёров</p><p class="case__text">8 шагов на трёх языках.</p></li><li class="case" data-case="kit"><figure class="case__pic"><img src="img/work/kit_34.jpg" width="780" height="1040" alt="Claude Kit: сайт продукта для разработчиков" loading="lazy"></figure><h3 class="case__name">Claude Kit</h3><p class="case__kind">Сайт продукта для разработчиков</p><p class="case__text">Набор настроек для ИИ-помощника.</p><a class="case__link" href="https://arturleto.github.io/claude-kit/" target="_blank" rel="noopener">Открыть<span class="vh">: Claude Kit</span></a></li></ul>
-    <div class="day" id="day">
-      <h3 class="day__title">Сутки моих ботов</h3>
-      <p class="day__lead">Настоящее расписание по московскому времени. Пока вы спите, они уже работают.</p>
-      <p class="day__now" data-day-now>Сейчас в Москве <b data-msk-time>--:--</b>. <span data-day-next></span></p>
-      <ol class="day__list"><li class="day__item" data-time="02:00"><time class="day__time">02:00</time><span class="day__what">Присылает гороскоп на день</span><span class="day__who">Советник, для меня</span></li><li class="day__item" data-time="04:00"><time class="day__time">04:00</time><span class="day__what">Публикует видео в Instagram</span><span class="day__who">Публикатор, для моего блога</span></li><li class="day__item" data-time="05:00"><time class="day__time">05:00</time><span class="day__what">Проверяет, что поиск клиентов работает</span><span class="day__who">PARSLEAD, для 5 клиентов</span></li><li class="day__item" data-time="06:00"><time class="day__time">06:00</time><span class="day__what">Сохраняет копию базы расходов</span><span class="day__who">Финансист, для меня</span></li><li class="day__item" data-time="13:00"><time class="day__time">13:00</time><span class="day__what">Ещё раз проверяет поиск клиентов</span><span class="day__who">PARSLEAD, для 5 клиентов</span></li><li class="day__item" data-time="14:00"><time class="day__time">14:00</time><span class="day__what">Публикует второе видео</span><span class="day__who">Публикатор, для моего блога</span></li><li class="day__item" data-time="15:00"><time class="day__time">15:00</time><span class="day__what">Присылает итог дня на телефон</span><span class="day__who">Трекер дня, для меня</span></li><li class="day__item" data-time="16:00"><time class="day__time">16:00</time><span class="day__what">Пишет итог дня в рабочий чат</span><span class="day__who">MAISON, для магазина</span></li><li class="day__item" data-time="23:00"><time class="day__time">23:00</time><span class="day__what">Продлевает доступ, чтобы публикации не прерывались</span><span class="day__who">Публикатор, для моего блога</span></li></ol>
-      <ul class="day__always"><li class="day__item day__item--always"><span class="day__time">Всегда</span><span class="day__what">Ищет в 366 чатах людей, которым нужна услуга</span><span class="day__who">PARSLEAD</span></li><li class="day__item day__item--always"><span class="day__time">Каждые 15 минут</span><span class="day__what">Перезапускает поиск, если он завис</span><span class="day__who">PARSLEAD</span></li><li class="day__item day__item--always"><span class="day__time">Каждую минуту</span><span class="day__what">Сохраняет рабочий чат магазина в архив</span><span class="day__who">MAISON</span></li><li class="day__item day__item--always"><span class="day__time">Каждые 4 часа</span><span class="day__what">Собирает сводку новостей</span><span class="day__who">Радар</span></li></ul>
-    </div>
-  </div>
-</section>
-<section class="sec prices" id="prices" aria-labelledby="prices-title">
-  <div class="sec__art" data-slot="prices-art" aria-hidden="true"></div>
-  <div class="wrap">
-    <header class="sec__head"><h2 class="sec__title" id="prices-title">От 3 000 ₽ до бесконечности</h2><p class="sec__lead">Цена зависит от задачи. Двигайте ползунок, и я покажу, что можно сделать за ваш бюджет.</p></header>
-    <div class="budget" data-steps='[3000, 7000, 15000, 30000, 50000, 100000, 0]' data-infinity='[&quot;Всё, что придумаете&quot;, &quot;Система ботов под ваш бизнес, веб-сервис, свой ИИ-продукт. Цену посчитаю под задачу.&quot;]'>
-      <div class="budget__top"><label class="budget__label" for="budget">Ваш бюджет</label><output class="budget__value" for="budget" id="budget-out">15 000 ₽</output></div>
-      <input class="budget__range" id="budget" type="range" min="0" max="6" step="1" value="2">
-      <ol class="budget__scale" aria-hidden="true"><li>3 000</li><li>7 000</li><li>15 000</li><li>30 000</li><li>50 000</li><li>100 000</li><li>∞</li></ol>
-      <div class="budget__result" aria-live="polite">
-        <p class="budget__head"></p>
-        <ul class="budget__items"></ul>
-        <p class="budget__more"></p>
-      </div>
-    </div>
-    <div class="pricelist">
-      <div class="pricelist__col"><h3 class="pricelist__title">Боты</h3><ul class="pricelist__list"><li class="pricelist__row" data-price="3000" data-kind="bot"><span class="pricelist__name">Бот-визитка</span><span class="pricelist__price">от 3 000 ₽</span></li><li class="pricelist__row" data-price="7000" data-kind="bot"><span class="pricelist__name">Бот заявок и квиз</span><span class="pricelist__price">от 7 000 ₽</span></li><li class="pricelist__row" data-price="10000" data-kind="bot"><span class="pricelist__name">Автопостинг</span><span class="pricelist__price">от 10 000 ₽</span></li><li class="pricelist__row" data-price="12000" data-kind="bot"><span class="pricelist__name">Бот записи</span><span class="pricelist__price">от 12 000 ₽</span></li><li class="pricelist__row" data-price="15000" data-kind="bot"><span class="pricelist__name">Платный доступ в канал</span><span class="pricelist__price">от 15 000 ₽</span></li><li class="pricelist__row" data-price="15000" data-kind="bot"><span class="pricelist__name">ИИ для контента</span><span class="pricelist__price">от 15 000 ₽</span></li><li class="pricelist__row" data-price="15000" data-kind="bot"><span class="pricelist__name">Автоворонка и рассылки</span><span class="pricelist__price">от 15 000 ₽</span></li><li class="pricelist__row" data-price="15000" data-kind="bot"><span class="pricelist__name">Бот для учёта и команды</span><span class="pricelist__price">от 15 000 ₽</span></li><li class="pricelist__row" data-price="20000" data-kind="bot"><span class="pricelist__name">Бот-магазин с оплатой</span><span class="pricelist__price">от 20 000 ₽</span></li><li class="pricelist__row" data-price="20000" data-kind="bot"><span class="pricelist__name">Поиск клиентов в чатах</span><span class="pricelist__price">от 20 000 ₽</span></li><li class="pricelist__row" data-price="25000" data-kind="bot"><span class="pricelist__name">ИИ-консультант</span><span class="pricelist__price">от 25 000 ₽</span></li><li class="pricelist__row" data-price="30000" data-kind="bot"><span class="pricelist__name">ИИ-помощник по вашей методике</span><span class="pricelist__price">от 30 000 ₽</span></li><li class="pricelist__row" data-price="50000" data-kind="bot"><span class="pricelist__name">Mini App: приложение в Telegram</span><span class="pricelist__price">от 50 000 ₽</span></li><li class="pricelist__row" data-price="0" data-kind="bot"><span class="pricelist__name">Система ботов под бизнес</span><span class="pricelist__price">по задаче</span></li></ul></div>
-      <div class="pricelist__col"><h3 class="pricelist__title">Сайты</h3><ul class="pricelist__list"><li class="pricelist__row" data-price="5000" data-kind="site"><span class="pricelist__name">Сайт-визитка</span><span class="pricelist__price">от 5 000 ₽</span></li><li class="pricelist__row" data-price="15000" data-kind="site"><span class="pricelist__name">Лендинг</span><span class="pricelist__price">от 15 000 ₽</span></li><li class="pricelist__row" data-price="15000" data-kind="site"><span class="pricelist__name">Сайт-тест или калькулятор</span><span class="pricelist__price">от 15 000 ₽</span></li><li class="pricelist__row" data-price="25000" data-kind="site"><span class="pricelist__name">Блог для поисковиков</span><span class="pricelist__price">от 25 000 ₽</span></li><li class="pricelist__row" data-price="25000" data-kind="site"><span class="pricelist__name">Сайт для инвесторов</span><span class="pricelist__price">от 25 000 ₽</span></li><li class="pricelist__row" data-price="30000" data-kind="site"><span class="pricelist__name">Сайт с ИИ внутри</span><span class="pricelist__price">от 30 000 ₽</span></li><li class="pricelist__row" data-price="35000" data-kind="site"><span class="pricelist__name">Сайт компании или студии</span><span class="pricelist__price">от 35 000 ₽</span></li><li class="pricelist__row" data-price="50000" data-kind="site"><span class="pricelist__name">Интернет-магазин</span><span class="pricelist__price">от 50 000 ₽</span></li><li class="pricelist__row" data-price="70000" data-kind="site"><span class="pricelist__name">Онлайн-школа</span><span class="pricelist__price">от 70 000 ₽</span></li><li class="pricelist__row" data-price="0" data-kind="site"><span class="pricelist__name">Веб-сервис</span><span class="pricelist__price">по задаче</span></li></ul></div>
-    </div>
-    <div class="prices__note"><p>Это стартовые цены. Точную сумму назову после разговора. Если задача не меняется, цена тоже не меняется.</p><p>Отдельно оплачиваются сервер, домен и нейросеть. Сервер для бота от 330 ₽ в месяц. Всё посчитаю заранее.</p></div>
-  </div>
-</section>
-<section class="sec process" id="process" aria-labelledby="process-title">
-  <div class="sec__art" data-slot="process-art" aria-hidden="true"></div>
-  <div class="wrap">
-    <header class="sec__head"><h2 class="sec__title" id="process-title">Как мы работаем</h2><p class="sec__lead">Четыре шага от первого сообщения до запуска.</p></header>
-    <ol class="steps"><li class="step"><h3 class="step__title">Вы пишете в Telegram</h3><p class="step__text">Пара предложений о задаче. Можно голосовым.</p></li><li class="step"><h3 class="step__title">Я называю цену и срок</h3><p class="step__text">Задаю вопросы, предлагаю решение, всё фиксируем письменно.</p></li><li class="step"><h3 class="step__title">Делаю и показываю</h3><p class="step__text">Результат видите по ходу работы. На каждом этапе два круга правок.</p></li><li class="step"><h3 class="step__title">Запускаю и остаюсь на связи</h3><p class="step__text">Всё оформляю на ваше имя, учу пользоваться. 60 дней бесплатно исправляю ошибки.</p></li></ol>
-  </div>
-</section>
-<section class="sec faq" id="faq" aria-labelledby="faq-title">
-  <div class="sec__art" data-slot="faq-art" aria-hidden="true"></div>
-  <div class="wrap">
-    <header class="sec__head"><h2 class="sec__title" id="faq-title">Частые вопросы</h2><p class="sec__lead">Если вашего вопроса нет, задайте его в Telegram.</p></header>
-    <div class="faq__list"><details class="qa"><summary class="qa__q">Сколько времени занимает работа?</summary><div class="qa__a"><p>Простой бот или визитка: от 1 до 3 дней. Бот с оплатой или лендинг: 1-2 недели. Магазин, онлайн-школа или Mini App: от 3 недель. Точный срок назову до старта.</p></div></details><details class="qa"><summary class="qa__q">Мне нужно разбираться в технике?</summary><div class="qa__a"><p>Нет. Вы рассказываете задачу своими словами, остальное делаю я. В конце покажу, как всем пользоваться.</p></div></details><details class="qa"><summary class="qa__q">Как проходит оплата?</summary><div class="qa__a"><p>По этапам: часть до старта, остальное после запуска. Если решите остановиться, платите только за сделанное.</p></div></details><details class="qa"><summary class="qa__q">Сколько стоит содержать бота или сайт?</summary><div class="qa__a"><p>Хостинг сайта от 420 ₽ в месяц, сервер для бота от 330 ₽. Бот с нейросетью живёт на сервере в Европе, от 1 620 ₽ в месяц, один ответ нейросети стоит от 1 ₽. Всё посчитаю заранее.</p></div></details><details class="qa"><summary class="qa__q">Кому будет принадлежать бот и сайт?</summary><div class="qa__a"><p>Вам. Домен, сервер и бот оформляю на ваше имя. После оплаты передаю код, доступы и понятную инструкцию.</p></div></details><details class="qa"><summary class="qa__q">Можно потом что-то добавить?</summary><div class="qa__a"><p>Да. Бота и сайт можно расширять: подключить оплату, ИИ, новые разделы. Свои проекты я дорабатываю постоянно.</p></div></details><details class="qa"><summary class="qa__q">Вы на Бали. Как работать из России?</summary><div class="qa__a"><p>Удалённо, через Telegram и созвоны. На Бали на 5 часов позже, чем в Москве, поэтому к вашему утру часть работы уже готова.</p></div></details></div>
-  </div>
-</section>
-<section class="sec contact" id="contact" aria-labelledby="contact-title">
-  <div class="sec__art" data-slot="contact-art" aria-hidden="true"></div>
-  <div class="wrap contact__in">
-    <figure class="contact__pic"><img src="img/work/artur.jpg" width="960" height="1280" alt="Артур Лето на Бали с попугаем ара на плече" loading="lazy"></figure>
-    <div class="contact__body">
-      <h2 class="sec__title contact__title" id="contact-title">Расскажите о задаче</h2>
-      <p class="sec__lead contact__lead">Напишите пару предложений, можно голосовым. Отвечу, задам вопросы и назову цену.</p>
-      <a class="btn btn--primary btn--big contact__cta" href="https://t.me/arturleto" target="_blank" rel="noopener">Написать в Telegram</a>
-      <dl class="contact__card">
-        <div class="contact__row"><dt>Telegram</dt><dd><a href="https://t.me/arturleto" target="_blank" rel="noopener">@arturleto</a></dd></div>
-        <div class="contact__row"><dt>Instagram</dt><dd><a href="https://www.instagram.com/artur_leto_/" target="_blank" rel="noopener">@artur_leto_</a></dd></div>
-        <div class="contact__row"><dt>На Бали сейчас</dt><dd data-bali-time>--:--</dd></div>
-        <div class="contact__row"><dt>Разница с Москвой</dt><dd>+5 часов</dd></div>
-      </dl>
+      </article>
+      <article class="host__block">
+        <h3>Бот с нейросетью</h3>
+        <div class="host__row">
+          <img src="img/work/sovetnik_34.jpg" width="810" height="1080" alt="Советник по звёздам присылает утренний прогноз" loading="lazy">
+          <ul>
+            <li>Нейросети не работают с российских серверов</li>
+            <li>Поэтому такой бот живёт на сервере в Европе, от 1 620 ₽ в месяц</li>
+            <li>Ответ нейросети стоит от 1 ₽</li>
+            <li>Данные ваших клиентов можно хранить отдельно, в России</li>
+          </ul>
+        </div>
+      </article>
+      <article class="host__block">
+        <h3>Данные и копии</h3>
+        <div class="host__row">
+          <img src="img/work/parslead_34.jpg" width="810" height="1080" alt="Отчёт бота о проверке парсеров" loading="lazy">
+          <ul>
+            <li>Данные клиентов из России хранятся на сервере в России, этого требует закон о персональных данных</li>
+            <li>Каждый день делается копия базы</li>
+            <li>Копия лежит отдельно и не пропадёт вместе с сервером</li>
+          </ul>
+        </div>
+      </article>
+      <article class="host__block">
+        <h3>Домен</h3>
+        <div class="host__row">
+          <img src="img/work/ms_invest_34.jpg" width="780" height="1040" alt="Страница для инвесторов на трёх языках" loading="lazy">
+          <ul>
+            <li>Адрес сайта в зоне .ru от 199 ₽ за регистрацию</li>
+            <li>Продление от 420 ₽ в год</li>
+            <li>При покупке нужно подтвердить личность через Госуслуги, подскажу как</li>
+          </ul>
+        </div>
+      </article>
     </div>
   </div>
 </section>
+
+<section class="faq wrap" id="voprosy" aria-labelledby="faq-h">
+  <div class="faq__grid">
+    <div class="faq__list" role="tablist" aria-labelledby="faq-h">
+      <h2 id="faq-h">Частые вопросы</h2>
+      <noscript><dl class="plain"><dt><strong>Как вы считаете цену?</strong></dt><dd>Цена зависит от числа страниц или экранов, функций и подключений к другим сервисам. После разговора назову точную сумму и закреплю её в договоре. Если задача не меняется, цена тоже не меняется.</dd><dt><strong>Как проходит оплата?</strong></dt><dd>Проект до 100 000 ₽ оплачивается двумя частями. Половина до старта, половина после запуска. Крупный проект оплачивается в три этапа. 30% до старта, 40% после сдачи основной части, 30% после запуска.</dd><dt><strong>Что если результат не понравится?</strong></dt><dd>Вы видите работу на каждом этапе, поэтому в конце сюрпризов нет. На каждом этапе есть два круга правок. Если решите остановиться, оплачиваете только сделанное, а остаток предоплаты я возвращаю.</dd><dt><strong>Кому принадлежит код?</strong></dt><dd>Вам. Домен, сервер и бот сразу регистрирую на ваше имя. Код передаю после полной оплаты вместе с доступами и инструкцией, права на него прописываем в договоре.</dd><dt><strong>Сколько стоит содержать проект?</strong></dt><dd>Хостинг сайта стоит от 420 ₽ в месяц, сервер для бота от 330 ₽. Нейросеть оплачивается по факту, один ответ стоит от 1 ₽. Всё это я посчитаю заранее.</dd><dt><strong>Что будет после запуска?</strong></dt><dd>Ещё 60 дней я бесплатно исправляю ошибки. Дальше можно взять поддержку от 10 000 ₽ в месяц или обращаться разово, когда нужно.</dd><dt><strong>Вы работаете с клиентами из России?</strong></dt><dd>Да. Я живу на Бали и работаю удалённо. На Бали на 5 часов позже, чем в Москве, поэтому к вашему утру часть работы уже готова. После запуска код и доступы у вас, так что проект ни от кого не зависит.</dd><dt><strong>Можно сделать срочно?</strong></dt><dd>Да, если позволяет график. Срочная работа стоит на 30% дороже.</dd><dt><strong>Что не входит в цену?</strong></dt><dd>Тексты и фото, если их нужно делать с нуля, а ещё оплата хостинга, домена и нейросети. Всё это обсуждаем заранее и пишем отдельной строкой.</dd></dl></noscript>
+    </div>
+    <p class="faq__pane" id="faq-pane" aria-live="polite"></p>
+  </div>
+</section>
+
+<section class="contact" id="kontakty" aria-labelledby="contact-h">
+  <img src="img/work/artur.jpg" width="960" height="1280" alt="Артур Лето на Бали с попугаем ара на плече" loading="lazy">
+  <div class="card" data-reveal>
+    <h2 id="contact-h">Напишите мне</h2>
+    <p class="card__who">Артур Лето<br>Живу на Бали, работаю удалённо</p>
+    <dl>
+      <div><dt>Telegram</dt><dd><a class="link" href="https://t.me/arturleto">@arturleto</a></dd></div>
+      <div><dt>На Бали сейчас</dt><dd id="bali-now">UTC+8</dd></div>
+      <div><dt>Разница с Москвой</dt><dd>+5 часов</dd></div>
+    </dl>
+    <a class="button" href="https://t.me/arturleto">Написать в Telegram</a>
+  </div>
+</section>
+
 </main>
+
 <footer class="foot">
-  <div class="sec__art" data-slot="footer-art" aria-hidden="true"></div>
-  <div class="wrap foot__in">
-    <p class="foot__name">Артур Лето</p>
-    <p class="foot__role">Telegram-боты и сайты</p>
-    <nav class="foot__nav" aria-label="Разделы внизу"><a class="foot__link" href="#bots">Боты</a><a class="foot__link" href="#sites">Сайты</a><a class="foot__link" href="#demos">Портфолио</a><a class="foot__link" href="#prices">Цены</a><a class="foot__link" href="#contact">Связь</a></nav>
-    <p class="foot__copy">© 2026 Артур Лето. Фото в демо-сайтах взяты с Pexels.</p>
+  <div class="foot__pic"><video id="tp" muted loop playsinline preload="none" poster="img/found/teleprinter-automatic-printing-poster.jpg" width="854" height="480" aria-label="Телетайп Lorenz сам печатает сообщение, 1960-е"><source src="img/found/teleprinter-automatic-printing.webm" type="video/webm"><source src="img/found/teleprinter.mp4" type="video/mp4"></video></div>
+  <div class="foot__side">
+    <p class="foot__mark">Артур Лето</p>
+    <nav class="foot__menu" aria-label="Разделы">
+      <a href="#raboty">Работы</a>
+      <a href="#sutki">Сутки ботов</a>
+      <a href="#ceny">Цены</a>
+      <a href="#kak">Как работаю</a>
+      <a href="#hosting">Хостинг</a>
+      <a href="#voprosy">Вопросы</a>
+    </nav>
+    <div class="foot__info">
+      <div><p>Связь</p><p><a class="link" href="https://t.me/arturleto">Telegram @arturleto</a></p></div>
+      <div><p>Соцсети</p><p><a class="link" href="https://instagram.com/artur_leto_">Instagram @artur_leto_</a></p></div>
+    </div>
+    <p class="foot__legal">© 2026 Артур Лето. Архивные фото в оформлении взяты из Wikimedia Commons. Телеграф Токио, NTT, 1963. Телефонистка гостиницы Many Glacier, Bain News Service, 1925. Оператор телетайпа, 1940-е. Все три в общественном достоянии. Коммутатор Wisconsin Bell, Gary Langebartels / FortepanIowa, CC BY-SA 4.0. Видео телетайпа Lorenz, Konrad Gutkowski, CC BY 3.0.</p>
   </div>
 </footer>
-<script src="core/chats.js" defer></script>
-<script src="themes/neon/theme.js" defer></script>
-<script src="themes/poster/theme.js" defer></script>
-<script src="themes/bento/theme.js" defer></script>
-<script src="themes/lux/theme.js" defer></script>
-<script src="themes/chat/theme.js" defer></script>
-<script src="core/core.js" defer></script>
+
+<script>
+document.documentElement.classList.add('js');
+(function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* reveals */
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } });
+  }, { rootMargin: '0px 0px -6% 0px', threshold: 0 });
+  document.querySelectorAll('[data-reveal], .how__panel').forEach(function (el) { io.observe(el); });
+
+  /* footer clip: plays only on screen */
+  var tp = document.getElementById('tp');
+  if (tp && !reduce) {
+    new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { tp.play().catch(function () {}); } else { tp.pause(); } });
+    }, { threshold: 0.2 }).observe(tp);
+  }
+
+  /* work: the name crossing the middle sets the picture */
+  var names = [].slice.call(document.querySelectorAll('.work__name'));
+  var frame = document.getElementById('work-frame');
+  var imgs = [].slice.call(document.querySelectorAll('#work-frame img'));
+  var kind = document.getElementById('work-kind'), detail = document.getElementById('work-detail');
+  function setWork(a) {
+    var i = +a.dataset.i;
+    names.forEach(function (n) { n.setAttribute('aria-current', n === a ? 'true' : 'false'); });
+    imgs.forEach(function (im, k) { im.classList.toggle('is-on', k === i); if (k === i && im.loading === 'lazy') im.loading = 'eager'; });
+    frame.classList.toggle('is-dark', imgs[i].hasAttribute('data-dark'));
+    kind.textContent = a.dataset.kind;
+    detail.textContent = a.dataset.detail;
+  }
+  var mid = new IntersectionObserver(function (es) {
+    es.forEach(function (e) { if (e.isIntersecting) setWork(e.target); });
+  }, { rootMargin: '-49% 0px -49% 0px', threshold: 0 });
+  names.forEach(function (n) { mid.observe(n); });
+  imgs.forEach(function (im) { var pre = new Image(); pre.src = im.src; });
+
+  /* schedule: what runs next, by Bali time */
+  function zoneNow(off) { var d = new Date(); return new Date(d.getTime() + (d.getTimezoneOffset() + off) * 60000); }
+  function hhmm(d) { return String(d.getHours()).padStart(2, '0') + ':' + String(d.getMinutes()).padStart(2, '0'); }
+  var rows = [].slice.call(document.querySelectorAll('#sched tr[data-t]'));
+  function tick() {
+    var now = zoneNow(180), mins = now.getHours() * 60 + now.getMinutes();
+    var next = null;
+    rows.forEach(function (r) { r.classList.remove('is-next'); });
+    for (var k = 0; k < rows.length; k++) {
+      var p = rows[k].dataset.t.split(':'), m = +p[0] * 60 + +p[1];
+      if (m > mins) { next = rows[k]; break; }
+    }
+    if (!next) next = rows[0];
+    var t = next.dataset.t;
+    rows.forEach(function (r) { if (r.dataset.t === t) r.classList.add('is-next'); });
+    var what = next.cells[0].textContent, who = next.cells[1].textContent;
+    what = what.charAt(0).toLowerCase() + what.slice(1);
+    document.getElementById('day-live').innerHTML = 'Сейчас в Москве <strong>' + hhmm(now) + '</strong>. Следующая задача в ' + t + '. ' + who + ' ' + what + '.';
+    document.getElementById('bali-now').textContent = hhmm(zoneNow(480));
+  }
+  tick(); setInterval(tick, 30000);
+
+  /* pricing */
+  var plans = [
+    ['Лендинг', 'от 40 000 ₽', '7-12 рабочих дней', 'Одна страница, которая продаёт одну услугу. Дизайн под ваш бренд, текст по структуре продаж, заявки в Telegram или CRM, Яндекс Метрика, которая считает заявки.', 'Обсудить лендинг'],
+    ['Сайт компании', 'от 80 000 ₽', '15-25 рабочих дней', 'От 5 до 15 страниц. Услуги, кейсы, цены, контакты и формы заявок. Тексты можно править самим, без программиста.', 'Обсудить сайт'],
+    ['Блог', 'от 60 000 ₽', '10-20 рабочих дней', 'Блог со статьями, которые находят в Яндексе. Рубрики, поиск по сайту, быстрые страницы и настройка под поисковики.', 'Обсудить блог'],
+    ['Магазин', 'от 120 000 ₽', '20-35 рабочих дней', 'Каталог, корзина, оплата картой и по СБП, заказы приходят вам в Telegram, у покупателя есть личный кабинет.', 'Обсудить магазин'],
+    ['Веб-сервис', 'от 150 000 ₽', '30-60 рабочих дней', 'Личный кабинет, база данных, панель управления, разные права для сотрудников и связка с другими сервисами. Для сервисов, где у каждого клиента свой аккаунт.', 'Обсудить сервис'],
+    ['Telegram-бот', 'от 30 000 ₽', '5-10 рабочих дней', 'Меню, кнопки, приём заявок, ответы на частые вопросы и рассылки. Заявки сразу приходят вам в Telegram.', 'Обсудить бота'],
+    ['Бот с оплатой', 'от 70 000 ₽', '12-25 рабочих дней', 'Оплата и подписки, доступ в закрытый канал, напоминания о продлении, панель управления со статистикой.', 'Обсудить бота с оплатой'],
+    ['Бот с ИИ', 'от 60 000 ₽', '10-25 рабочих дней', 'Понимает голосовые, читает фото и чеки, отвечает клиентам по вашим материалам. Подключаю ChatGPT, Claude или Gemini.', 'Обсудить бота с ИИ'],
+    ['Приложение в Telegram', 'от 100 000 ₽', '15-30 рабочих дней', 'Приложение внутри Telegram. Каталог, запись, личный кабинет и оплата. Клиенту не нужно ничего скачивать.', 'Обсудить приложение'],
+    ['Парсер', 'от 25 000 ₽', '5-10 рабочих дней', 'Следит за чатами, каналами и сайтами по ключевым словам. Находит людей, которым нужна ваша услуга, и присылает их вам. Нейросеть убирает рекламу и лишние сообщения.', 'Обсудить парсер'],
+    ['Автоматизация', 'от 20 000 ₽', '3-10 рабочих дней', 'Связываю сервисы между собой. CRM, Google Таблицы, рассылки, автопубликация в соцсети. Цена за одну связку, например сайт и Google Таблица.', 'Обсудить автоматизацию'],
+    ['Поддержка', 'от 10 000 ₽', 'в месяц', 'Слежу, чтобы всё работало, обновляю, делаю копии базы и вношу мелкие правки. Новые функции сверх этого стоят 2 500 ₽ в час.', 'Обсудить поддержку']
+  ];
+  var tg = 'https://t.me/arturleto';
+  var list = document.querySelector('.price__names');
+  var stage = document.getElementById('price-stage');
+  var pf = document.getElementById('pf'), pt = document.getElementById('pt'), px = document.getElementById('px'), pb = document.getElementById('pb');
+  var planBtns = plans.map(function (p, i) {
+    var b = document.createElement('button');
+    b.className = 'plan display'; b.type = 'button'; b.setAttribute('role', 'tab'); b.textContent = p[0];
+    b.id = 'plan-' + i;
+    var inl = document.createElement('div');
+    inl.className = 'plan__inline';
+    inl.innerHTML = '<p class="price__fig display">' + p[1] + '</p><p class="price__term">' + p[2] + '</p><p class="price__text">' + p[3] + '</p><a class="button" href="' + tg + '">' + p[4] + '</a>';
+    list.appendChild(b); list.appendChild(inl);
+    b.addEventListener('click', function () { selectPlan(i); });
+    b.addEventListener('focus', function () { selectPlan(i); });
+    return b;
+  });
+  var cur = -1;
+  function selectPlan(i) {
+    if (i === cur) return;
+    cur = i;
+    planBtns.forEach(function (b, k) { b.setAttribute('aria-selected', k === i ? 'true' : 'false'); });
+    var p = plans[i];
+    function fill() { pf.textContent = p[1]; pt.textContent = p[2]; px.textContent = p[3]; pb.textContent = p[4]; }
+    if (reduce) { fill(); return; }
+    stage.classList.add('is-swapping');
+    setTimeout(function () { fill(); stage.classList.remove('is-swapping'); }, 200);
+  }
+  selectPlan(5);
+
+  /* faq */
+  var faqs = [
+    ['Как вы считаете цену?', 'Цена зависит от числа страниц или экранов, функций и подключений к другим сервисам. После разговора назову точную сумму и закреплю её в договоре. Если задача не меняется, цена тоже не меняется.'],
+    ['Как проходит оплата?', 'Проект до 100 000 ₽ оплачивается двумя частями. Половина до старта, половина после запуска. Крупный проект оплачивается в три этапа. 30% до старта, 40% после сдачи основной части, 30% после запуска.'],
+    ['Что если результат не понравится?', 'Вы видите работу на каждом этапе, поэтому в конце сюрпризов нет. На каждом этапе есть два круга правок. Если решите остановиться, оплачиваете только сделанное, а остаток предоплаты я возвращаю.'],
+    ['Кому принадлежит код?', 'Вам. Домен, сервер и бот сразу регистрирую на ваше имя. Код передаю после полной оплаты вместе с доступами и инструкцией, права на него прописываем в договоре.'],
+    ['Сколько стоит содержать проект?', 'Хостинг сайта стоит от 420 ₽ в месяц, сервер для бота от 330 ₽. Нейросеть оплачивается по факту, один ответ стоит от 1 ₽. Всё это я посчитаю заранее.'],
+    ['Что будет после запуска?', 'Ещё 60 дней я бесплатно исправляю ошибки. Дальше можно взять поддержку от 10 000 ₽ в месяц или обращаться разово, когда нужно.'],
+    ['Вы работаете с клиентами из России?', 'Да. Я живу на Бали и работаю удалённо. На Бали на 5 часов позже, чем в Москве, поэтому к вашему утру часть работы уже готова. После запуска код и доступы у вас, так что проект ни от кого не зависит.'],
+    ['Можно сделать срочно?', 'Да, если позволяет график. Срочная работа стоит на 30% дороже.'],
+    ['Что не входит в цену?', 'Тексты и фото, если их нужно делать с нуля, а ещё оплата хостинга, домена и нейросети. Всё это обсуждаем заранее и пишем отдельной строкой.']
+  ];
+  var flist = document.querySelector('.faq__list'), pane = document.getElementById('faq-pane');
+  var qBtns = faqs.map(function (f, i) {
+    var b = document.createElement('button');
+    b.className = 'q'; b.type = 'button'; b.setAttribute('role', 'tab'); b.textContent = f[0];
+    var inl = document.createElement('p'); inl.className = 'q__inline'; inl.textContent = f[1];
+    flist.appendChild(b); flist.appendChild(inl);
+    b.addEventListener('click', function () { selectQ(i); });
+    b.addEventListener('focus', function () { selectQ(i); });
+    if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) b.addEventListener('mouseenter', function () { selectQ(i); });
+    return b;
+  });
+  var qc = -1;
+  function selectQ(i) {
+    if (i === qc) return;
+    qc = i;
+    qBtns.forEach(function (b, k) { b.setAttribute('aria-selected', k === i ? 'true' : 'false'); });
+    if (reduce) { pane.textContent = faqs[i][1]; return; }
+    pane.classList.add('is-swapping');
+    setTimeout(function () { pane.textContent = faqs[i][1]; pane.classList.remove('is-swapping'); }, 150);
+  }
+  selectQ(0);
+})();
+</script>
 </body>
 </html>
